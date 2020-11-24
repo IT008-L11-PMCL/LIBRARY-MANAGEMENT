@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Docking2010.Views.NativeMdi;
+using DevExpress.XtraBars.Navigation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace LIBRARY.Forms
         public MainForm()
         {
             InitializeComponent();
+            this.EnableAcrylicAccent = false;
         }
 
         private void accordionControl1_MouseEnter(object sender, EventArgs e)
@@ -35,18 +37,29 @@ namespace LIBRARY.Forms
             AddChild(cardForm);
         }
 
-        void AddChild(object sender)
+       private bool isActive(Form form)
+        {
+            if (MdiChildren.Count() > 0)
+                foreach (var item in MdiChildren)
+                    if (form.Name == item.Name)
+                        return true;
+            return false;
+        }
+
+        private void AddChild(object sender)
         {
             Form form = sender as Form;
-            form.MdiParent = this;
-            form.Show();
-            form.BringToFront();
+            if (!isActive(form))
+            {
+                form.MdiParent = this;
+                form.Show();
+            }
         }
 
-        private void accordionControlElement5_Click(object sender, EventArgs e)
+        private void Books_Click(object sender, EventArgs e)
         {
-
+            BookForm bookForm = new BookForm();
+            AddChild(bookForm);
         }
-
     }
 }

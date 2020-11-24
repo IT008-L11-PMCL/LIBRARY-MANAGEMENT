@@ -13,13 +13,9 @@ namespace LIBRARY.BUSS
         {
             return sach.loadSach();
         }
-        public int them(sach s)
+        public bool them(sach s)
         {
-            if (string.IsNullOrEmpty(s.maSach))
-                return 0;
-            if (!sach.insert(s))
-                return -1;
-            return 1;
+            return sach.insert(s);
         }
         public void xoa(string str)
         {

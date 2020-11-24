@@ -1,6 +1,6 @@
-﻿namespace LIBRARY
+﻿namespace LIBRARY.Forms
 {
-    partial class CardForm
+    partial class Reader
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,9 @@
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reader));
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
@@ -43,27 +44,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.EDate = new System.Windows.Forms.DateTimePicker();
-            this.IDate = new System.Windows.Forms.DateTimePicker();
-            this.Note = new DevExpress.XtraEditors.TextEdit();
-            this.CardID = new DevExpress.XtraEditors.TextEdit();
+            this.CardID = new System.Windows.Forms.ComboBox();
+            this.Note = new System.Windows.Forms.TextBox();
+            this.Address = new DevExpress.XtraEditors.TextEdit();
+            this.ReaderName = new DevExpress.XtraEditors.TextEdit();
+            this.ReaderID = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Note.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CardID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Address.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReaderName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReaderID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,72 +81,78 @@
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(102, 33);
+            this.labelControl1.Size = new System.Drawing.Size(142, 33);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "CARDs";
+            this.labelControl1.Text = "READERs";
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.EDate);
-            this.layoutControl1.Controls.Add(this.IDate);
-            this.layoutControl1.Controls.Add(this.Note);
             this.layoutControl1.Controls.Add(this.CardID);
+            this.layoutControl1.Controls.Add(this.Note);
+            this.layoutControl1.Controls.Add(this.Address);
+            this.layoutControl1.Controls.Add(this.ReaderName);
+            this.layoutControl1.Controls.Add(this.ReaderID);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.layoutControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 33);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 0, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 81);
+            this.layoutControl1.Size = new System.Drawing.Size(608, 120);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // EDate
+            // CardID
             // 
-            this.EDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.EDate.Location = new System.Drawing.Point(501, 12);
-            this.EDate.Name = "EDate";
-            this.EDate.Size = new System.Drawing.Size(287, 20);
-            this.EDate.TabIndex = 9;
-            this.EDate.Value = new System.DateTime(2020, 12, 20, 8, 33, 57, 266);
-            // 
-            // IDate
-            // 
-            this.IDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.IDate.Location = new System.Drawing.Point(111, 42);
-            this.IDate.Name = "IDate";
-            this.IDate.Size = new System.Drawing.Size(287, 20);
-            this.IDate.TabIndex = 8;
+            this.CardID.DisplayMember = "MaThe";
+            this.CardID.FormattingEnabled = true;
+            this.CardID.Location = new System.Drawing.Point(402, 12);
+            this.CardID.Name = "CardID";
+            this.CardID.Size = new System.Drawing.Size(194, 21);
+            this.CardID.TabIndex = 8;
+            this.CardID.ValueMember = "MaThe";
             // 
             // Note
             // 
-            this.Note.Location = new System.Drawing.Point(501, 42);
+            this.Note.Location = new System.Drawing.Point(402, 45);
             this.Note.Name = "Note";
-            this.Note.Size = new System.Drawing.Size(287, 20);
-            this.Note.StyleController = this.layoutControl1;
+            this.Note.Size = new System.Drawing.Size(194, 20);
             this.Note.TabIndex = 7;
             // 
-            // CardID
+            // Address
             // 
-            this.CardID.Location = new System.Drawing.Point(111, 12);
-            this.CardID.Name = "CardID";
-            this.CardID.Size = new System.Drawing.Size(287, 20);
-            this.CardID.StyleController = this.layoutControl1;
-            this.CardID.TabIndex = 4;
+            this.Address.Location = new System.Drawing.Point(108, 78);
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(194, 20);
+            this.Address.StyleController = this.layoutControl1;
+            this.Address.TabIndex = 6;
+            // 
+            // ReaderName
+            // 
+            this.ReaderName.Location = new System.Drawing.Point(108, 45);
+            this.ReaderName.Name = "ReaderName";
+            this.ReaderName.Size = new System.Drawing.Size(194, 20);
+            this.ReaderName.StyleController = this.layoutControl1;
+            this.ReaderName.TabIndex = 5;
+            // 
+            // ReaderID
+            // 
+            this.ReaderID.Location = new System.Drawing.Point(108, 12);
+            this.ReaderID.Name = "ReaderID";
+            this.ReaderID.Size = new System.Drawing.Size(194, 20);
+            this.ReaderID.StyleController = this.layoutControl1;
+            this.ReaderID.TabIndex = 4;
             // 
             // Root
             // 
-            this.Root.AppearanceGroup.BackColor = System.Drawing.Color.White;
-            this.Root.AppearanceGroup.Options.UseBackColor = true;
             this.Root.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Root.AppearanceItemCaption.Options.UseFont = true;
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem4,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
@@ -155,51 +166,64 @@
             rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
             rowDefinition2.Height = 100D;
             rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition3.Height = 100D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition1,
-            rowDefinition2});
-            this.Root.Size = new System.Drawing.Size(800, 81);
+            rowDefinition2,
+            rowDefinition3});
+            this.Root.Size = new System.Drawing.Size(608, 120);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.CardID;
+            this.layoutControlItem1.Control = this.ReaderID;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(390, 30);
-            this.layoutControlItem1.Text = "Card ID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(87, 13);
+            this.layoutControlItem1.Size = new System.Drawing.Size(294, 33);
+            this.layoutControlItem1.Text = "Reader ID";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(84, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.ReaderName;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 33);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
+            this.layoutControlItem2.Size = new System.Drawing.Size(294, 33);
+            this.layoutControlItem2.Text = "Reader\'s name";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(84, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.Address;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 66);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
+            this.layoutControlItem3.Size = new System.Drawing.Size(294, 34);
+            this.layoutControlItem3.Text = "Address";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(84, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.Note;
-            this.layoutControlItem4.Location = new System.Drawing.Point(390, 30);
+            this.layoutControlItem4.Location = new System.Drawing.Point(294, 33);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem4.Size = new System.Drawing.Size(390, 31);
+            this.layoutControlItem4.Size = new System.Drawing.Size(294, 33);
             this.layoutControlItem4.Text = "Note";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(87, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(84, 13);
             // 
-            // layoutControlItem2
+            // layoutControlItem5
             // 
-            this.layoutControlItem2.Control = this.IDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(390, 31);
-            this.layoutControlItem2.Text = "Initiated Date";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(87, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.EDate;
-            this.layoutControlItem3.Location = new System.Drawing.Point(390, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem3.Size = new System.Drawing.Size(390, 30);
-            this.layoutControlItem3.Text = "Expiration Date";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 13);
+            this.layoutControlItem5.Control = this.CardID;
+            this.layoutControlItem5.Location = new System.Drawing.Point(294, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem5.Size = new System.Drawing.Size(294, 33);
+            this.layoutControlItem5.Text = "Card ID";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(84, 13);
             // 
             // windowsUIButtonPanel1
             // 
@@ -214,13 +238,12 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
             this.windowsUIButtonPanel1.ContentAlignment = System.Drawing.ContentAlignment.TopRight;
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 114);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 153);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(800, 51);
-            this.windowsUIButtonPanel1.TabIndex = 2;
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(608, 54);
+            this.windowsUIButtonPanel1.TabIndex = 4;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
-            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
             // dataGridView1
             // 
@@ -242,7 +265,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 165);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 207);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -253,37 +276,31 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 285);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.Size = new System.Drawing.Size(608, 181);
+            this.dataGridView1.TabIndex = 5;
             // 
-            // CardForm
+            // Reader
             // 
-            this.Appearance.BackColor = System.Drawing.SystemColors.Window;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(608, 388);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.windowsUIButtonPanel1);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("CardForm.IconOptions.SvgImage")));
-            this.MaximizeBox = false;
-            this.Name = "CardForm";
-            this.Text = "Cards";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CardForm_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Reader";
+            this.Text = "Reader";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Note.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CardID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Address.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReaderName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReaderID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -294,18 +311,19 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit Note;
+        private System.Windows.Forms.ComboBox CardID;
+        private System.Windows.Forms.TextBox Note;
+        private DevExpress.XtraEditors.TextEdit Address;
+        private DevExpress.XtraEditors.TextEdit ReaderName;
+        private DevExpress.XtraEditors.TextEdit ReaderID;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private System.Windows.Forms.DateTimePicker EDate;
-        private System.Windows.Forms.DateTimePicker IDate;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private DevExpress.XtraEditors.TextEdit CardID;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
-

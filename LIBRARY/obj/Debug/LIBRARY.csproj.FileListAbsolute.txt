@@ -116,3 +116,4 @@ D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\de\
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\es\DevExpress.XtraScheduler.v20.2.Core.resources.dll
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\ja\DevExpress.XtraScheduler.v20.2.Core.resources.dll
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\ru\DevExpress.XtraScheduler.v20.2.Core.resources.dll
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.Reader.resources

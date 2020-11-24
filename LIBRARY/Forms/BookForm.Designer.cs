@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
@@ -68,6 +69,7 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Amount.Properties)).BeginInit();
@@ -125,87 +127,98 @@
             // State
             // 
             this.State.FormattingEnabled = true;
-            this.State.Location = new System.Drawing.Point(133, 127);
+            this.State.Location = new System.Drawing.Point(154, 127);
             this.State.Name = "State";
-            this.State.Size = new System.Drawing.Size(223, 21);
-            this.State.TabIndex = 14;
+            this.State.Size = new System.Drawing.Size(202, 21);
+            this.State.TabIndex = 4;
             // 
             // LanguageID
             // 
+            this.LanguageID.DisplayMember = "MaNN";
             this.LanguageID.FormattingEnabled = true;
-            this.LanguageID.Location = new System.Drawing.Point(481, 127);
+            this.LanguageID.Location = new System.Drawing.Point(502, 127);
             this.LanguageID.Name = "LanguageID";
-            this.LanguageID.Size = new System.Drawing.Size(223, 21);
-            this.LanguageID.TabIndex = 13;
+            this.LanguageID.Size = new System.Drawing.Size(202, 21);
+            this.LanguageID.TabIndex = 9;
+            this.LanguageID.ValueMember = "MaNN";
             // 
             // LocationID
             // 
+            this.LocationID.DisplayMember = "MaVT";
             this.LocationID.FormattingEnabled = true;
-            this.LocationID.Location = new System.Drawing.Point(481, 98);
+            this.LocationID.Location = new System.Drawing.Point(502, 98);
             this.LocationID.Name = "LocationID";
-            this.LocationID.Size = new System.Drawing.Size(223, 21);
-            this.LocationID.TabIndex = 12;
+            this.LocationID.Size = new System.Drawing.Size(202, 21);
+            this.LocationID.TabIndex = 8;
+            this.LocationID.ValueMember = "MaVT";
             // 
             // BCategoryID
             // 
+            this.BCategoryID.DisplayMember = "MaTL";
             this.BCategoryID.FormattingEnabled = true;
-            this.BCategoryID.Location = new System.Drawing.Point(481, 69);
+            this.BCategoryID.Location = new System.Drawing.Point(502, 69);
             this.BCategoryID.Name = "BCategoryID";
-            this.BCategoryID.Size = new System.Drawing.Size(223, 21);
-            this.BCategoryID.TabIndex = 11;
+            this.BCategoryID.Size = new System.Drawing.Size(202, 21);
+            this.BCategoryID.TabIndex = 7;
+            this.BCategoryID.ValueMember = "MaTL";
             // 
             // PubID
             // 
+            this.PubID.DisplayMember = "MaNXB";
             this.PubID.FormattingEnabled = true;
-            this.PubID.Location = new System.Drawing.Point(481, 12);
+            this.PubID.Location = new System.Drawing.Point(502, 12);
             this.PubID.Name = "PubID";
-            this.PubID.Size = new System.Drawing.Size(223, 21);
-            this.PubID.TabIndex = 10;
+            this.PubID.Size = new System.Drawing.Size(202, 21);
+            this.PubID.TabIndex = 5;
+            this.PubID.ValueMember = "MaNXB";
             // 
             // AuthorID
             // 
+            this.AuthorID.DisplayMember = "MaTG";
             this.AuthorID.FormattingEnabled = true;
-            this.AuthorID.Location = new System.Drawing.Point(481, 40);
+            this.AuthorID.Location = new System.Drawing.Point(502, 40);
             this.AuthorID.Name = "AuthorID";
-            this.AuthorID.Size = new System.Drawing.Size(223, 21);
-            this.AuthorID.TabIndex = 9;
+            this.AuthorID.Size = new System.Drawing.Size(202, 21);
+            this.AuthorID.TabIndex = 6;
+            this.AuthorID.ValueMember = "MaTG";
             // 
             // Amount
             // 
-            this.Amount.Location = new System.Drawing.Point(133, 98);
+            this.Amount.Location = new System.Drawing.Point(154, 98);
             this.Amount.Name = "Amount";
-            this.Amount.Size = new System.Drawing.Size(223, 20);
+            this.Amount.Size = new System.Drawing.Size(202, 20);
             this.Amount.StyleController = this.layoutControl1;
-            this.Amount.TabIndex = 7;
+            this.Amount.TabIndex = 3;
+            this.Amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Amount_KeyPress);
             // 
             // DatePublic
             // 
             this.DatePublic.EditValue = null;
-            this.DatePublic.Location = new System.Drawing.Point(133, 69);
+            this.DatePublic.Location = new System.Drawing.Point(154, 69);
             this.DatePublic.Name = "DatePublic";
             this.DatePublic.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DatePublic.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DatePublic.Size = new System.Drawing.Size(223, 20);
+            this.DatePublic.Size = new System.Drawing.Size(202, 20);
             this.DatePublic.StyleController = this.layoutControl1;
-            this.DatePublic.TabIndex = 6;
+            this.DatePublic.TabIndex = 2;
             // 
             // BookTitle
             // 
-            this.BookTitle.Location = new System.Drawing.Point(133, 40);
+            this.BookTitle.Location = new System.Drawing.Point(154, 40);
             this.BookTitle.Name = "BookTitle";
-            this.BookTitle.Size = new System.Drawing.Size(223, 20);
+            this.BookTitle.Size = new System.Drawing.Size(202, 20);
             this.BookTitle.StyleController = this.layoutControl1;
-            this.BookTitle.TabIndex = 5;
+            this.BookTitle.TabIndex = 1;
             // 
             // BookID
             // 
-            this.BookID.Location = new System.Drawing.Point(133, 12);
+            this.BookID.Location = new System.Drawing.Point(154, 12);
             this.BookID.Name = "BookID";
-            this.BookID.Size = new System.Drawing.Size(223, 20);
+            this.BookID.Size = new System.Drawing.Size(202, 20);
             this.BookID.StyleController = this.layoutControl1;
-            this.BookID.TabIndex = 4;
+            this.BookID.TabIndex = 0;
             // 
             // Root
             // 
@@ -259,110 +272,101 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(348, 28);
             this.layoutControlItem1.Text = "Book ID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.BookTitle;
-            this.layoutControlItem2.Enabled = false;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem2.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem2.Text = "Book Title";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.DatePublic;
-            this.layoutControlItem3.Enabled = false;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 57);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
             this.layoutControlItem3.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem3.Text = "Date of Publication";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.Amount;
-            this.layoutControlItem4.Enabled = false;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 86);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 3;
             this.layoutControlItem4.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem4.Text = "Amount";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.AuthorID;
-            this.layoutControlItem6.Enabled = false;
             this.layoutControlItem6.Location = new System.Drawing.Point(348, 28);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem6.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem6.Text = "Author ID";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.PubID;
-            this.layoutControlItem5.Enabled = false;
             this.layoutControlItem5.Location = new System.Drawing.Point(348, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem5.Size = new System.Drawing.Size(348, 28);
             this.layoutControlItem5.Text = "Publishing Company ID";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.BCategoryID;
-            this.layoutControlItem7.Enabled = false;
             this.layoutControlItem7.Location = new System.Drawing.Point(348, 57);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem7.OptionsTableLayoutItem.RowIndex = 2;
             this.layoutControlItem7.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem7.Text = "Book Category ID";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.LocationID;
-            this.layoutControlItem8.Enabled = false;
             this.layoutControlItem8.Location = new System.Drawing.Point(348, 86);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem8.OptionsTableLayoutItem.RowIndex = 3;
             this.layoutControlItem8.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem8.Text = "Location ID";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.LanguageID;
-            this.layoutControlItem9.Enabled = false;
             this.layoutControlItem9.Location = new System.Drawing.Point(348, 115);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem9.OptionsTableLayoutItem.RowIndex = 4;
             this.layoutControlItem9.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem9.Text = "Language ID";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(130, 13);
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.State;
-            this.layoutControlItem10.Enabled = false;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 115);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.OptionsTableLayoutItem.RowIndex = 4;
             this.layoutControlItem10.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem10.Text = "State";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(109, 13);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(130, 13);
             // 
             // dataGridView1
             // 
@@ -396,6 +400,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(716, 262);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // windowsUIButtonPanel1
             // 
@@ -404,10 +409,10 @@
             windowsUIButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions3.SvgImage")));
             windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Insert/Update", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, false, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Refresh", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, false, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, false, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Insert/Update", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "insert", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Refresh", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "delete", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
             this.windowsUIButtonPanel1.ContentAlignment = System.Drawing.ContentAlignment.TopRight;
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 197);
@@ -416,9 +421,12 @@
             this.windowsUIButtonPanel1.TabIndex = 3;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
+            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
             // BookForm
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 459);
@@ -428,6 +436,8 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "BookForm";
             this.Text = "BookForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CardForm_FormClosing);
+            this.Load += new System.EventHandler(this.BookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Amount.Properties)).EndInit();
@@ -479,5 +489,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

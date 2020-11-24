@@ -75,8 +75,9 @@
             this.accordionControlElement2});
             this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(250, 470);
+            this.accordionControl1.Size = new System.Drawing.Size(48, 470);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             this.accordionControl1.MouseEnter += new System.EventHandler(this.accordionControl1_MouseEnter);
@@ -105,6 +106,7 @@
             this.Books.Name = "Books";
             this.Books.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.Books.Text = "Books";
+            this.Books.Click += new System.EventHandler(this.Books_Click);
             // 
             // Cards
             // 
@@ -119,7 +121,6 @@
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Book Management";
-            this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
             // author
             // 
@@ -149,7 +150,7 @@
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
             this.fluentDesignFormControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFontEdit1});
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(874, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(732, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinBarSubItem1);
@@ -204,6 +205,7 @@
             // 
             galleryItemGroup1.Caption = "Profile";
             galleryItem1.Caption = "Profile";
+            galleryItem1.Description = "View/Update your profile";
             galleryItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
             galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
             galleryItem1});
@@ -240,7 +242,7 @@
             this.skinBarSubItem1,
             this.barLargeButtonItem2,
             this.barButtonItem1});
-            this.fluentFormDefaultManager1.MaxItemId = 16;
+            this.fluentFormDefaultManager1.MaxItemId = 21;
             this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFontEdit1});
             // 
@@ -262,33 +264,19 @@
             // tabbedView1
             // 
             this.tabbedView1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbedView1.Appearance.Options.UseBorderColor = true;
             this.tabbedView1.Appearance.Options.UseFont = true;
-            this.tabbedView1.Appearance.Options.UseTextOptions = true;
             this.tabbedView1.AppearancePage.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbedView1.AppearancePage.Header.Options.UseBorderColor = true;
             this.tabbedView1.AppearancePage.Header.Options.UseFont = true;
-            this.tabbedView1.AppearancePage.Header.Options.UseTextOptions = true;
             this.tabbedView1.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbedView1.AppearancePage.HeaderActive.Options.UseBorderColor = true;
             this.tabbedView1.AppearancePage.HeaderActive.Options.UseFont = true;
-            this.tabbedView1.AppearancePage.HeaderActive.Options.UseTextOptions = true;
             this.tabbedView1.AppearancePage.HeaderDisabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbedView1.AppearancePage.HeaderDisabled.Options.UseBorderColor = true;
             this.tabbedView1.AppearancePage.HeaderDisabled.Options.UseFont = true;
-            this.tabbedView1.AppearancePage.HeaderDisabled.Options.UseTextOptions = true;
             this.tabbedView1.AppearancePage.HeaderHotTracked.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbedView1.AppearancePage.HeaderHotTracked.Options.UseBorderColor = true;
             this.tabbedView1.AppearancePage.HeaderHotTracked.Options.UseFont = true;
-            this.tabbedView1.AppearancePage.HeaderHotTracked.Options.UseTextOptions = true;
             this.tabbedView1.AppearancePage.HeaderSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbedView1.AppearancePage.HeaderSelected.Options.UseBorderColor = true;
             this.tabbedView1.AppearancePage.HeaderSelected.Options.UseFont = true;
-            this.tabbedView1.AppearancePage.HeaderSelected.Options.UseTextOptions = true;
             this.tabbedView1.AppearancePage.PageClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabbedView1.AppearancePage.PageClient.Options.UseBorderColor = true;
             this.tabbedView1.AppearancePage.PageClient.Options.UseFont = true;
-            this.tabbedView1.AppearancePage.PageClient.Options.UseTextOptions = true;
             // 
             // bar1
             // 
@@ -301,14 +289,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 501);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ClientSize = new System.Drawing.Size(732, 501);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainForm";
             this.NavigationControl = this.accordionControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management";
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();

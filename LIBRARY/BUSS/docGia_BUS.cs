@@ -12,13 +12,9 @@ namespace LIBRARY.BUSS
         {
             return dG.loadDocGia();
         }
-        public int them(docGia d)
+        public bool them(docGia d)
         {
-            if (string.IsNullOrEmpty(d.maDG))
-                return 0;
-            if (!dG.insert(d))
-                return -1;
-            return 1;
+            return dG.insert(d);
         }
         public void xoa(string s)
         {

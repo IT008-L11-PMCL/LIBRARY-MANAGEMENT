@@ -1,36 +1,46 @@
-﻿using DevExpress.XtraBars.Docking2010;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using LIBRARY.BUSS;
+using DevExpress.XtraBars.Docking2010;
 using LIBRARY.DataClass;
-using System;
-using System.Windows.Forms;
 
-namespace LIBRARY
+namespace LIBRARY.Forms
 {
-    public partial class CardForm : DevExpress.XtraEditors.XtraForm
+    public partial class Reader : DevExpress.XtraEditors.XtraForm
     {
+        docGia_BUS docGia = new docGia_BUS();
         TheTV_BUS the = new TheTV_BUS();
-        public CardForm()
+        public Reader()
         {
             InitializeComponent();
         }
-        //
         private void resetText()
         {
             foreach (Control control in layoutControl1.Controls)
             {
-                if (control is TextEdit || control is DateTimePicker)
+                if (control is TextEdit)
                     control.ResetText();
-            }    
-        }  
-             
-        private void Form1_Load(object sender, EventArgs e)
+            }
+        }
+
+        private void ReaderForm_Load(object sender, EventArgs e)
         {
             resetText();
-            CardID.Focus();
-            dataGridView1.DataSource = the.getList();
+            ReaderID.Focus();
+            //
+            CardID.DataSource = the.getList();
+
+            dataGridView1.DataSource = docGia.getList();
             dataGridView1.AutoResizeColumns();
-        }            
+        }
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, ButtonEventArgs e)
         {
@@ -38,7 +48,7 @@ namespace LIBRARY
             switch (tag)
             {
                 case "refresh":
-                    Form1_Load(sender, e);
+                    ReaderForm_Load(sender, e);
                     break;
                 case "close":
                     Application.Exit();
@@ -51,19 +61,20 @@ namespace LIBRARY
                     break;
                 default:
                     break;
-            }    
+            }
         }
 
-        private void Insert(object sender,EventArgs e)
+        private void Insert(object sender, EventArgs e)
         {
             try
             {
-                theTV t = new theTV();
-                t.maThe =  CardID.Text;
-                t.ngayBD = IDate.Value.ToString();
-                t.ngayHH = EDate.Value.ToString();
-                t.ghiChu = Note.Text;
-                if (t.isNull())
+                docGia d = new docGia();
+                d.maDG = ReaderID.Text;
+                d.tenDG = ReaderName.Text;
+                d.diaChi = Address.Text;
+                d.maThe = CardID.Text;
+                d.ghiChu = Note.Text;
+                if (d.isNull())
                 {
                     toolTip1.ToolTipTitle = "Warning";
                     toolTip1.Show("Please enter full information", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
@@ -71,16 +82,16 @@ namespace LIBRARY
                 }
                 else
                 {
-                    if (the.them(t))
+                    if (docGia.them(d))
                     {
-                        Form1_Load(sender, e);
+                        ReaderForm_Load(sender, e);
                         resetText();
                     }
                     else
                     {
-                        if (the.sua(t))
+                        if (docGia.sua(d))
                         {
-                            Form1_Load(sender, e);
+                            ReaderForm_Load(sender, e);
                             resetText();
                         }
                         else return;
@@ -89,7 +100,7 @@ namespace LIBRARY
 
                 }
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show(exc.Message, "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -105,8 +116,8 @@ namespace LIBRARY
                     if (dialog == DialogResult.OK)
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
-                            the.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-                            Form1_Load(sender, e);
+                            docGia.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
+                            ReaderForm_Load(sender, e);
                             resetText();
                         }
                 }
@@ -116,7 +127,7 @@ namespace LIBRARY
                     toolTip1.Show("Select the rows you want to delete!", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
                 }
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show(exc.Message, "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -129,25 +140,24 @@ namespace LIBRARY
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     int i = dataGridView1.SelectedRows[0].Index;
-                    CardID.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    IDate.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                    EDate.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                    Note.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    
                 }
                 else
                     return;
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
-                MessageBox.Show(exc.Message,"Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exc.Message, "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void CardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Cards window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure want to exit??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dialog == DialogResult.Cancel)
                 e.Cancel = true;
         }
+
+       
     }
 }
