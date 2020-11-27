@@ -30,7 +30,7 @@ namespace LIBRARY.DAO
         {
             if (dataTable("select * from DOCGIA where MaDG ='" + d.maDG + "'").Rows.Count > 0)
                 return false;
-            string sqlCommand = string.Format("insert into DOCGIA values ('{0}',N'{1}',N'{2}',{3},N'{4}')", d.maDG, d.tenDG, d.diaChi, d.maThe, d.ghiChu);
+            string sqlCommand = string.Format("insert into DOCGIA values ('{0}',N'{1}',N'{2}','{3}',N'{4}')", d.maDG, d.tenDG, d.diaChi, d.maThe, d.ghiChu);
             Excute(sqlCommand);
             return true;
         }

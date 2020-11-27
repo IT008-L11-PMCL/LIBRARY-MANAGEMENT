@@ -7,7 +7,7 @@ using LIBRARY.DataClass;
 
 namespace LIBRARY.Forms
 {
-    public partial class BookForm : DevExpress.XtraEditors.XtraForm
+    public partial class Books : DevExpress.XtraEditors.XtraForm
     {
         sach_BUS sach = new sach_BUS();
         NXB_BUS nxb = new NXB_BUS();
@@ -15,7 +15,7 @@ namespace LIBRARY.Forms
         theLoai_BUS theLoai = new theLoai_BUS();
         viTri_BUS viTri = new viTri_BUS();
         NgonNgu_BUS ngonNgu = new NgonNgu_BUS();
-        public BookForm()
+        public Books()
         {
             InitializeComponent();
         }
@@ -57,7 +57,7 @@ namespace LIBRARY.Forms
                     BookForm_Load(sender, e);
                     break;
                 case "close":
-                    Application.Exit();
+                    this.Close();
                     break;
                 case "delete":
                     Delete(sender, e);

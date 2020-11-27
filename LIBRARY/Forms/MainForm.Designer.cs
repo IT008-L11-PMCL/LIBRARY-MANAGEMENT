@@ -44,8 +44,13 @@
             this.Books = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Cards = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.author = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Readers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
@@ -94,8 +99,8 @@
             this.Books,
             this.Cards,
             this.accordionControlElement5,
-            this.author,
-            this.Readers});
+            this.Readers,
+            this.accordionControlElement3});
             this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Library";
@@ -114,20 +119,14 @@
             this.Cards.Name = "Cards";
             this.Cards.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.Cards.Text = "Cards";
-            this.Cards.Click += new System.EventHandler(this.accordionControlElement4_Click);
+            this.Cards.Click += new System.EventHandler(this.Cards_Click);
             // 
             // accordionControlElement5
             // 
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Book Management";
-            // 
-            // author
-            // 
-            this.author.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("author.ImageOptions.SvgImage")));
-            this.author.Name = "author";
-            this.author.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.author.Text = "Authors";
+            this.accordionControlElement5.Click += new System.EventHandler(this.BookManagement_Click);
             // 
             // Readers
             // 
@@ -135,6 +134,54 @@
             this.Readers.Name = "Readers";
             this.Readers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.Readers.Text = "Readers";
+            this.Readers.Click += new System.EventHandler(this.Readers_Click);
+            // 
+            // accordionControlElement3
+            // 
+            this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement4,
+            this.accordionControlElement6,
+            this.accordionControlElement7,
+            this.accordionControlElement8,
+            this.accordionControlElement9});
+            this.accordionControlElement3.Expanded = true;
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Text = "Others";
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Publishing Companies";
+            this.accordionControlElement4.Click += new System.EventHandler(this.PublishingCompanyForm_Click);
+            // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Text = "Authors";
+            this.accordionControlElement6.Click += new System.EventHandler(this.Authors_Click);
+            // 
+            // accordionControlElement7
+            // 
+            this.accordionControlElement7.Name = "accordionControlElement7";
+            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement7.Text = "Languages";
+            this.accordionControlElement7.Click += new System.EventHandler(this.Language_Click);
+            // 
+            // accordionControlElement8
+            // 
+            this.accordionControlElement8.Name = "accordionControlElement8";
+            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement8.Text = "Categories";
+            this.accordionControlElement8.Click += new System.EventHandler(this.Categories_Click);
+            // 
+            // accordionControlElement9
+            // 
+            this.accordionControlElement9.Name = "accordionControlElement9";
+            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Text = "Location";
+            this.accordionControlElement9.Click += new System.EventHandler(this.Location_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -207,15 +254,19 @@
             galleryItem1.Caption = "Profile";
             galleryItem1.Description = "View/Update your profile";
             galleryItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            galleryItem1.Tag = "profile";
             galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
             galleryItem1});
             galleryItemGroup2.Caption = "Account";
             galleryItem2.Caption = "Sign in";
             galleryItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
+            galleryItem2.Tag = "signin";
             galleryItem3.Caption = "Register a new account";
             galleryItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
+            galleryItem3.Tag = "register";
             galleryItem4.Caption = "Log out";
             galleryItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
+            galleryItem4.Tag = "logout";
             galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
             galleryItem2,
             galleryItem3,
@@ -223,12 +274,14 @@
             galleryItemGroup3.Caption = "System";
             galleryItem5.Caption = "Close";
             galleryItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
+            galleryItem5.Tag = "close";
             galleryItemGroup3.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
             galleryItem5});
             this.galleryDropDown1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
             galleryItemGroup1,
             galleryItemGroup2,
             galleryItemGroup3});
+            this.galleryDropDown1.Gallery.ItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.galleryDropDown1_Gallery_ItemClick);
             this.galleryDropDown1.Manager = this.fluentFormDefaultManager1;
             this.galleryDropDown1.Name = "galleryDropDown1";
             // 
@@ -242,7 +295,7 @@
             this.skinBarSubItem1,
             this.barLargeButtonItem2,
             this.barButtonItem1});
-            this.fluentFormDefaultManager1.MaxItemId = 21;
+            this.fluentFormDefaultManager1.MaxItemId = 27;
             this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFontEdit1});
             // 
@@ -299,6 +352,7 @@
             this.NavigationControl = this.accordionControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
@@ -319,7 +373,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement Books;
         private DevExpress.XtraBars.Navigation.AccordionControlElement Cards;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement author;
         private DevExpress.XtraBars.Navigation.AccordionControlElement Readers;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
@@ -331,5 +384,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
         private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
     }
 }

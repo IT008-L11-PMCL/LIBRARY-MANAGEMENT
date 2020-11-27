@@ -11,17 +11,13 @@ namespace LIBRARY.BUSS
         {
             return muon.loadMuonTra();
         }
-        public int them(muonTra m)
+        public bool them(muonTra m)
         {
-            if (string.IsNullOrEmpty(m.maMuon))
-                return 0;
-            if (!muon.insert(m))
-                return -1;
-            return 1;
+            return muon.insert(m);
         }
-        public void xoa(muonTra m)
+        public void xoa(string maMuon)
         {
-            muon.delete(m.maMuon);
+            muon.delete(maMuon);
         }
         public bool sua(muonTra m)
         {

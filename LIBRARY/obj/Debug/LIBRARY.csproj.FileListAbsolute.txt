@@ -100,7 +100,6 @@ D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\ja\
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\ru\DevExpress.Xpo.v20.2.resources.dll
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.CardForm.resources
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.MainForm.resources
-D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.BookForm.resources
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\DevExpress.XtraScheduler.v20.2.Core.Desktop.dll
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\DevExpress.XtraScheduler.v20.2.Core.dll
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\DevExpress.XtraScheduler.v20.2.dll
@@ -117,3 +116,10 @@ D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\es\
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\ja\DevExpress.XtraScheduler.v20.2.Core.resources.dll
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\bin\Debug\ru\DevExpress.XtraScheduler.v20.2.Core.resources.dll
 D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.Reader.resources
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.BookManagement.resources
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.Languages.resources
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.Books.resources
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.Categories.resources
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.Location.resources
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.PubCompany.resources
+D:\NguyenNhutTan\DO_AN_QUAN_LY_THU_VIEN\LIBRARY MANAGEMENT\LIBRARY\obj\Debug\LIBRARY.Forms.Home.resources

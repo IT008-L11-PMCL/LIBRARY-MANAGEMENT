@@ -10,5 +10,9 @@ namespace LIBRARY.DataClass
     {
         public string maTL { get; set; }
         public string tenTL { get; set; }
+        public bool isNull()
+        {
+            return (string.IsNullOrEmpty(maTL) || string.IsNullOrEmpty(tenTL));
+        }
     }
 }

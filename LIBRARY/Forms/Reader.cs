@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using LIBRARY.BUSS;
@@ -37,7 +30,7 @@ namespace LIBRARY.Forms
             ReaderID.Focus();
             //
             CardID.DataSource = the.getList();
-
+            //        
             dataGridView1.DataSource = docGia.getList();
             dataGridView1.AutoResizeColumns();
         }
@@ -51,7 +44,7 @@ namespace LIBRARY.Forms
                     ReaderForm_Load(sender, e);
                     break;
                 case "close":
-                    Application.Exit();
+                    this.Close();
                     break;
                 case "delete":
                     Delete(sender, e);
@@ -112,7 +105,7 @@ namespace LIBRARY.Forms
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    DialogResult dialog = MessageBox.Show("Are you sure want to delete this row!!", "Question", MessageBoxButtons.OKCancel);
+                    DialogResult dialog = MessageBox.Show("Are you sure you want to delete this row!!", "Question", MessageBoxButtons.OKCancel);
                     if (dialog == DialogResult.OK)
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
@@ -140,7 +133,11 @@ namespace LIBRARY.Forms
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     int i = dataGridView1.SelectedRows[0].Index;
-                    
+                    ReaderID.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    ReaderName.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    Address.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                    CardID.SelectedItem = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    Note.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
                 }
                 else
                     return;
@@ -151,13 +148,14 @@ namespace LIBRARY.Forms
             }
         }
 
-        private void CardForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void ReaderForm_Closing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure want to exit??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+           
+            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Readers Window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dialog == DialogResult.Cancel)
                 e.Cancel = true;
         }
 
-       
+        
     }
 }

@@ -41,7 +41,7 @@ namespace LIBRARY
                     Form1_Load(sender, e);
                     break;
                 case "close":
-                    Application.Exit();
+                    this.Close();
                     break;
                 case "delete":
                     Delete(sender, e);

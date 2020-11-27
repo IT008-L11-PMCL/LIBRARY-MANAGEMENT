@@ -10,7 +10,7 @@ namespace LIBRARY.DataClass
 {
     class dataProvider
     {
-        public static string connectionString = @"Data Source=DESKTOP-I2KUT1M\CITADEL;Initial Catalog=QuanLyThuVien;User ID=IT008; Password=it008";
+        public static string connectionString = @"Data Source=DESKTOP-I2KUT1M\CITADEL;Initial Catalog=QLTV;Integrated Security=True";
         public DataTable dataTable(string cmd)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

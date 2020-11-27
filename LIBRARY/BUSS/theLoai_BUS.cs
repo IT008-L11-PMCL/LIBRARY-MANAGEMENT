@@ -11,17 +11,13 @@ namespace LIBRARY.BUSS
         {
             return tl.loadTL();
         }
-        public int them(theLoai t)
+        public bool them(theLoai t)
         {
-            if (string.IsNullOrEmpty(t.maTL))
-                return 0;
-            if (!tl.insert(t))
-                return -1;
-            return 1;
+            return tl.insert(t);
         }
-        public void xoa(theLoai t)
+        public void xoa(string str)
         {
-            tl.delete(t.maTL);
+            tl.delete(str);
         }
         public bool sua(theLoai t)
         {

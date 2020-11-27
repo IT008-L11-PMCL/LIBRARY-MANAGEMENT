@@ -12,17 +12,13 @@ namespace LIBRARY.BUSS
         {
             return ngonNgu.loadNN();
         }
-        public int them(NgonNgu n)
+        public bool them(NgonNgu n)
         {
-            if (string.IsNullOrEmpty(n.maNN))
-                return 0;
-            if (!ngonNgu.insert(n))
-                return -1;
-            return 1;
+            return ngonNgu.insert(n);
         }
-        public void xoa(NgonNgu n)
+        public void xoa(string str)
         {
-            ngonNgu.delete(n.maNN);
+            ngonNgu.delete(str);
         }
         public bool sua(NgonNgu n)
         {

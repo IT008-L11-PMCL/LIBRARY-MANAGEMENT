@@ -16,5 +16,10 @@ namespace LIBRARY.DataClass
         public string ngayTra { get; set; }
         public string hinhThuc { get; set; }
         public int soNgayMuon { get; set; }
+
+        public bool isNull()
+        {
+            return (string.IsNullOrEmpty(maMuon) || string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(maSach) || string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(ngayTra) || string.IsNullOrEmpty(ngayMuon) || string.IsNullOrEmpty(hinhThuc) || string.IsNullOrEmpty(soNgayMuon.ToString()));
+        }
     }
 }

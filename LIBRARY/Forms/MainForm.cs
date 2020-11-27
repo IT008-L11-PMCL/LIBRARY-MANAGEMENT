@@ -1,13 +1,7 @@
-﻿using DevExpress.XtraBars;
-using DevExpress.XtraBars.Docking2010.Views.NativeMdi;
-using DevExpress.XtraBars.Navigation;
+﻿
+using DevExpress.XtraBars.Ribbon;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace LIBRARY.Forms
@@ -31,7 +25,7 @@ namespace LIBRARY.Forms
             accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
         }
 
-        private void accordionControlElement4_Click(object sender, EventArgs e)
+        private void Cards_Click(object sender, EventArgs e)
         {
             CardForm cardForm = new CardForm();
             AddChild(cardForm);
@@ -58,8 +52,72 @@ namespace LIBRARY.Forms
 
         private void Books_Click(object sender, EventArgs e)
         {
-            BookForm bookForm = new BookForm();
+            Books bookForm = new Books();
             AddChild(bookForm);
+        }
+
+        private void Readers_Click(object sender, EventArgs e)
+        {
+            Reader reader = new Reader();
+            AddChild(reader);
+        }
+
+        private void BookManagement_Click(object sender, EventArgs e)
+        {
+            BookManagement bookManagement = new BookManagement();
+            AddChild(bookManagement);
+        }
+
+        private void PublishingCompanyForm_Click(object sender, EventArgs e)
+        {
+            PubCompany pubCompany = new PubCompany();
+            AddChild(pubCompany);
+        }
+
+        private void Authors_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Language_Click(object sender, EventArgs e)
+        {
+            Languages languages = new Languages();
+            AddChild(languages);
+        }
+
+        private void Categories_Click(object sender, EventArgs e)
+        {
+            Categories categories = new Categories();
+            AddChild(categories);
+        }
+
+        private void Location_Click(object sender, EventArgs e)
+        {
+            Location location = new Location();
+            AddChild(location);
+        }
+
+        private void galleryDropDown1_Gallery_ItemClick(object sender, DevExpress.XtraBars.Ribbon.GalleryItemClickEventArgs e)
+        {
+            string tag = ((GalleryItem)e.Item).Tag.ToString();
+            switch (tag)
+            {
+                case "profile":
+                    break;
+                case "signin":
+                    break;
+                case "register":
+                    break;
+                case "logout":
+                    break;
+                case "close":
+                    Application.Exit();
+                    break;
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        { 
         }
     }
 }
