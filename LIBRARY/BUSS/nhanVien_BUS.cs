@@ -11,13 +11,9 @@ namespace LIBRARY.BUSS
         {
             return nv.loadNV();
         }
-        public int them(nhanVien n)
+        public bool them(nhanVien n)
         {
-            if (string.IsNullOrEmpty(n.maNV))
-                return 0;
-            if (!nv.insert(n))
-                return -1;
-            return 1;
+            return nv.insert(n);
         }
         public void xoa(nhanVien n)
         {
@@ -33,6 +29,18 @@ namespace LIBRARY.BUSS
         public DataTable timkiem(string s, string tk)
         {
             return nv.search(s, tk);
+        }
+
+        public bool check(string userName, string passWord)
+        {
+            if (nv.checkUser(userName, passWord).Rows.Count > 0)
+                return true;
+            return false;
+        }
+
+        public bool themUser(nhanVien n)
+        {
+            return nv.insertUser(n);
         }
     }
 }

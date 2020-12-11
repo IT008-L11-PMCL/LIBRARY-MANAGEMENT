@@ -12,13 +12,9 @@ namespace LIBRARY.BUSS
         {
             return nxb.loadNXB();
         }
-        public int them(NXB n)
+        public bool them(NXB n)
         {
-            if (string.IsNullOrEmpty(n.maNXB))
-                return 0;
-            if (!nxb.insert(n))
-                return -1;
-            return 1;
+            return nxb.insert(n);
         }
         public void xoa(string str)
         {
@@ -35,5 +31,7 @@ namespace LIBRARY.BUSS
         {
             return nxb.search(s, tk);
         }
+
+       
     }
 }

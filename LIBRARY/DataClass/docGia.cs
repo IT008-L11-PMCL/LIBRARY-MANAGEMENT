@@ -14,6 +14,12 @@ namespace LIBRARY.DataClass
         public string maThe { get; set; }
         public string ghiChu { get; set; }
 
+        public docGia()
+        {
+            diaChi = "null";
+            ghiChu = "null";
+        }
+
         public bool isNull()
         {
             return (string.IsNullOrEmpty(maDG) || string.IsNullOrEmpty(tenDG) || string.IsNullOrEmpty(diaChi) || string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(ghiChu));

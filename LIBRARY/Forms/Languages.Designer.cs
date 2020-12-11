@@ -50,9 +50,9 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Language.Properties)).BeginInit();
@@ -84,15 +84,15 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 33);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(530, 74);
+            this.layoutControl1.Size = new System.Drawing.Size(720, 74);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // Language
             // 
-            this.Language.Location = new System.Drawing.Point(358, 12);
+            this.Language.Location = new System.Drawing.Point(453, 12);
             this.Language.Name = "Language";
-            this.Language.Size = new System.Drawing.Size(160, 20);
+            this.Language.Size = new System.Drawing.Size(255, 20);
             this.Language.StyleController = this.layoutControl1;
             this.Language.TabIndex = 5;
             // 
@@ -100,7 +100,7 @@
             // 
             this.LanguageID.Location = new System.Drawing.Point(103, 12);
             this.LanguageID.Name = "LanguageID";
-            this.LanguageID.Size = new System.Drawing.Size(160, 20);
+            this.LanguageID.Size = new System.Drawing.Size(255, 20);
             this.LanguageID.StyleController = this.layoutControl1;
             this.LanguageID.TabIndex = 4;
             // 
@@ -129,7 +129,7 @@
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition1,
             rowDefinition2});
-            this.Root.Size = new System.Drawing.Size(530, 74);
+            this.Root.Size = new System.Drawing.Size(720, 74);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -137,17 +137,17 @@
             this.layoutControlItem1.Control = this.LanguageID;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(255, 27);
+            this.layoutControlItem1.Size = new System.Drawing.Size(350, 27);
             this.layoutControlItem1.Text = "Languages ID";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(79, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.Language;
-            this.layoutControlItem2.Location = new System.Drawing.Point(255, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(350, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(255, 27);
+            this.layoutControlItem2.Size = new System.Drawing.Size(350, 27);
             this.layoutControlItem2.Text = "Language";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(79, 13);
             // 
@@ -166,7 +166,7 @@
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 107);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(530, 54);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(720, 54);
             this.windowsUIButtonPanel1.TabIndex = 6;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
@@ -209,7 +209,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(530, 239);
+            this.dataGridView1.Size = new System.Drawing.Size(720, 292);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -231,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 400);
+            this.ClientSize = new System.Drawing.Size(720, 453);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.windowsUIButtonPanel1);
             this.Controls.Add(this.layoutControl1);

@@ -12,6 +12,13 @@ namespace LIBRARY.DataClass
         public string ngayBD { get; set; }
         public string ngayHH { get; set; }
         public string ghiChu { get; set; }
+        public string trangThai { get; set; }
+
+        public theTV()
+        {
+            trangThai = "Mới";
+            ghiChu = "null";
+        }
         public bool isNull()
         {
             return (string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(ngayBD) || string.IsNullOrEmpty(ngayHH) || string.IsNullOrEmpty(ghiChu));

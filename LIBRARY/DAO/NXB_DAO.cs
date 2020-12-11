@@ -26,6 +26,12 @@ namespace LIBRARY.DAO
             string sqlCommmand = string.Format("select * from NHAXUATBAN where {0} like '%{1}%'", s, tuKhoa);
             return dataTable(sqlCommmand);
         }
+        public DataTable search(string tuKhoa)
+        {
+            string sqlCommmand = string.Format("select * from NHAXUATBAN where MaNXB = '{0}'", tuKhoa);
+            return dataTable(sqlCommmand);
+        }
+
         public bool insert(NXB n)
         {
             if (dataTable("select * from NHAXUATBAN where MaNXB ='" + n.maNXB + "'").Rows.Count > 0)
@@ -38,6 +44,6 @@ namespace LIBRARY.DAO
         {
             string sqlCommand = "select * from NHAXUATBAN";
             return dataTable(sqlCommand);
-        }
+        }        
     }
 }

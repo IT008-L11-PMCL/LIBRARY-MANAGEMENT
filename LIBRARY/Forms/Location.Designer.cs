@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
@@ -42,27 +43,28 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.LocationID = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Zone = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Shelf = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Cell = new DevExpress.XtraEditors.TextEdit();
+            this.Shelf = new DevExpress.XtraEditors.TextEdit();
+            this.Zone = new DevExpress.XtraEditors.TextEdit();
+            this.LocationID = new DevExpress.XtraEditors.TextEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LocationID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Zone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Shelf.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cell.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Shelf.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LocationID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +96,38 @@
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // Cell
+            // 
+            this.Cell.Location = new System.Drawing.Point(327, 42);
+            this.Cell.Name = "Cell";
+            this.Cell.Size = new System.Drawing.Size(156, 20);
+            this.Cell.StyleController = this.layoutControl1;
+            this.Cell.TabIndex = 7;
+            // 
+            // Shelf
+            // 
+            this.Shelf.Location = new System.Drawing.Point(327, 12);
+            this.Shelf.Name = "Shelf";
+            this.Shelf.Size = new System.Drawing.Size(156, 20);
+            this.Shelf.StyleController = this.layoutControl1;
+            this.Shelf.TabIndex = 6;
+            // 
+            // Zone
+            // 
+            this.Zone.Location = new System.Drawing.Point(90, 42);
+            this.Zone.Name = "Zone";
+            this.Zone.Size = new System.Drawing.Size(155, 20);
+            this.Zone.StyleController = this.layoutControl1;
+            this.Zone.TabIndex = 5;
+            // 
+            // LocationID
+            // 
+            this.LocationID.Location = new System.Drawing.Point(90, 12);
+            this.LocationID.Name = "LocationID";
+            this.LocationID.Size = new System.Drawing.Size(155, 20);
+            this.LocationID.StyleController = this.layoutControl1;
+            this.LocationID.TabIndex = 4;
+            // 
             // Root
             // 
             this.Root.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,14 +158,6 @@
             this.Root.Size = new System.Drawing.Size(495, 80);
             this.Root.TextVisible = false;
             // 
-            // LocationID
-            // 
-            this.LocationID.Location = new System.Drawing.Point(90, 12);
-            this.LocationID.Name = "LocationID";
-            this.LocationID.Size = new System.Drawing.Size(155, 20);
-            this.LocationID.StyleController = this.layoutControl1;
-            this.LocationID.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.LocationID;
@@ -140,14 +166,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(237, 30);
             this.layoutControlItem1.Text = "Location ID";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // Zone
-            // 
-            this.Zone.Location = new System.Drawing.Point(90, 42);
-            this.Zone.Name = "Zone";
-            this.Zone.Size = new System.Drawing.Size(155, 20);
-            this.Zone.StyleController = this.layoutControl1;
-            this.Zone.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -159,14 +177,6 @@
             this.layoutControlItem2.Text = "Zone";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(66, 13);
             // 
-            // Shelf
-            // 
-            this.Shelf.Location = new System.Drawing.Point(327, 12);
-            this.Shelf.Name = "Shelf";
-            this.Shelf.Size = new System.Drawing.Size(156, 20);
-            this.Shelf.StyleController = this.layoutControl1;
-            this.Shelf.TabIndex = 6;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.Shelf;
@@ -176,14 +186,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(238, 30);
             this.layoutControlItem3.Text = "Shelf";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // Cell
-            // 
-            this.Cell.Location = new System.Drawing.Point(327, 42);
-            this.Cell.Name = "Cell";
-            this.Cell.Size = new System.Drawing.Size(156, 20);
-            this.Cell.StyleController = this.layoutControl1;
-            this.Cell.TabIndex = 7;
             // 
             // layoutControlItem4
             // 
@@ -215,6 +217,7 @@
             this.windowsUIButtonPanel1.TabIndex = 8;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
+            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
             // dataGridView1
             // 
@@ -250,6 +253,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(495, 227);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Location
             // 
@@ -262,16 +266,18 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "Location";
             this.Text = "Location";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CardForm_FormClosing);
+            this.Load += new System.EventHandler(this.Location_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LocationID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Zone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Shelf.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cell.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Shelf.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LocationID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -294,5 +300,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

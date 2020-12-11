@@ -13,5 +13,13 @@ namespace LIBRARY.DataClass
         public string hoTen { get; set; }
         public string ngaySinh { get; set; }
         public string sdt { get; set; }
+        //public string userName { get; set; }
+        public string passWord { get; set; }
+        public bool isNull()
+        {
+            return (string.IsNullOrWhiteSpace(maNV) || string.IsNullOrWhiteSpace(hoTen) || string.IsNullOrWhiteSpace(ngaySinh) || string.IsNullOrWhiteSpace(passWord) || string.IsNullOrWhiteSpace(sdt));
+        }
+        
+
     }
 }

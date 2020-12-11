@@ -45,6 +45,8 @@ namespace LIBRARY.Forms
             LocationID.DataSource = viTri.getList();
 
             dataGridView1.DataSource = sach.getList();
+
+            State.SelectedIndex = 0;
             dataGridView1.AutoResizeColumns();
         }
 
@@ -74,17 +76,16 @@ namespace LIBRARY.Forms
         {
             try
             {
-                sach s = new sach();
+                sach s = new sach();             
                 s.maSach = BookID.Text;
                 s.tenSach = BookTitle.Text;
-                s.namXB = DatePublic.Text;
-                s.soLuong = int.Parse(Amount.Text);
-                s.maXB = PubID.SelectedItem.ToString();
-                s.maTL = BCategoryID.SelectedItem.ToString();
-                s.maTG = AuthorID.SelectedItem.ToString();
-                s.maVT = LocationID.SelectedItem.ToString();
-                s.tinhTrang = State.SelectedIndex;
-                s.ngonNgu = LanguageID.SelectedItem.ToString();
+                s.namXB = DatePublic.Value.ToString();
+                s.maXB = PubID.SelectedValue.ToString();
+                s.maTG = AuthorID.SelectedValue.ToString();
+                s.maTL = BCategoryID.SelectedValue.ToString();
+                s.maVT = LocationID.SelectedValue.ToString();
+                s.tinhTrang = State.SelectedItem.ToString();
+                s.ngonNgu = LanguageID.SelectedValue.ToString();
                 if (s.isNull())
                 {
                     toolTip1.ToolTipTitle = "Warning";
@@ -128,9 +129,10 @@ namespace LIBRARY.Forms
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
                             sach.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-                            BookForm_Load(sender, e);
-                            resetText();
+                            
                         }
+                    BookForm_Load(sender, e);
+                    resetText();
                 }
                 else
                 {
@@ -138,9 +140,9 @@ namespace LIBRARY.Forms
                     toolTip1.Show("Select the rows you want to delete!", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
                 }
             }
-            catch (Exception exc)
+            catch (Exception)
             {
-                MessageBox.Show(exc.Message, "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Book's using!! Can't delete!! ", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -154,13 +156,12 @@ namespace LIBRARY.Forms
                     BookID.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
                     BookTitle.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
                     DatePublic.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                    Amount.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
-                    PubID.SelectedItem = dataGridView1.Rows[i].Cells[4].Value.ToString();
-                    AuthorID.SelectedItem = dataGridView1.Rows[i].Cells[5].Value.ToString();
-                    BCategoryID.SelectedItem = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                    LocationID.SelectedItem = dataGridView1.Rows[i].Cells[7].Value.ToString();
-                    //State.SelectedIndex = dataGridView1.Rows[i].Cells[8].Value;
-                    LanguageID.SelectedItem = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                    PubID.SelectedValue = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    AuthorID.SelectedValue = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                    BCategoryID.SelectedValue = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                    LocationID.SelectedValue = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                    State.SelectedValue = dataGridView1.Rows[i].Cells[7].Value;
+                    LanguageID.SelectedValue = dataGridView1.Rows[i].Cells[8].Value.ToString();
                 }
                 else
                     return;
@@ -173,19 +174,22 @@ namespace LIBRARY.Forms
 
         private void CardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure want to exit??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialog == DialogResult.Cancel)
-                e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Books??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
         }
 
-        private void Amount_KeyPress(object sender, KeyPressEventArgs e)
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar.ToString() != "\b")
-            {
-                e.Handled = true;           
-                toolTip1.ToolTipTitle = "Warning";
-                toolTip1.Show("Please enter a digit", Amount, Amount.Location, 2000);
-            }    
+            string str = textEdit1.Text;
+            if (!string.IsNullOrWhiteSpace(str))
+                dataGridView1.DataSource = sach.timkiem("Ten", str);
+            else
+                dataGridView1.DataSource = sach.getList();
+            dataGridView1.AutoResizeColumns();
         }
     }
 }

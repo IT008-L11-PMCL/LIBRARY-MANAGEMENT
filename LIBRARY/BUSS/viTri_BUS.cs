@@ -12,17 +12,13 @@ namespace LIBRARY.BUSS
         {
             return vt.loadVT();
         }
-        public int them(viTri t)
+        public bool them(viTri t)
         {
-            if (string.IsNullOrEmpty(t.maVT))
-                return 0;
-            if (!vt.insert(t))
-                return -1;
-            return 1;
+            return vt.insert(t);
         }
-        public void xoa(viTri t)
+        public void xoa(string str)
         {
-            vt.delete(t.maVT);
+            vt.delete(str);
         }
         public bool sua(viTri t)
         {

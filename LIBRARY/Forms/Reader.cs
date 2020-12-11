@@ -150,12 +150,22 @@ namespace LIBRARY.Forms
 
         private void ReaderForm_Closing(object sender, FormClosingEventArgs e)
         {
-           
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Readers Window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialog == DialogResult.Cancel)
-                e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Readers Window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
         }
 
-        
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            string str = textEdit1.Text;
+            if (string.IsNullOrWhiteSpace(str))
+                dataGridView1.DataSource = docGia.getList();
+            else
+                dataGridView1.DataSource = docGia.timkiem("MaDG", str);
+            dataGridView1.AutoResizeColumns();
+        }
     }
 }

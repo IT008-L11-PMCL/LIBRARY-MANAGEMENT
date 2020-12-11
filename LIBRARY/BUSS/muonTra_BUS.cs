@@ -15,6 +15,11 @@ namespace LIBRARY.BUSS
         {
             return muon.insert(m);
         }
+        public bool themp(muonTra m)
+        {
+            return muon.insertp(m);
+        }
+
         public void xoa(string maMuon)
         {
             muon.delete(maMuon);
@@ -26,9 +31,24 @@ namespace LIBRARY.BUSS
             muon.update(m);
             return true;
         }
-        public DataTable timkiem(string s, string tk)
+        public void suaMT(string maMuon, string maSach)
         {
-            return muon.search(s, tk);
+            muon.update(maMuon, maSach);
         }
+
+        public DataTable timkiem(string str)
+        {
+            return muon.search(str);
+        }
+        public DataTable timkiem(string maMuon, string maSach)
+        {
+            return muon.search(maMuon, maSach);
+        }
+
+        public DataTable getCTMTList(string str)
+        {
+            return muon.loadCTMT(str);
+        }
+        
     }
 }

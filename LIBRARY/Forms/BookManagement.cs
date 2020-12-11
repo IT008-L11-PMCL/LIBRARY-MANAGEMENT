@@ -20,6 +20,8 @@ namespace LIBRARY.Forms
         sach_BUS sach = new sach_BUS();
         TheTV_BUS the = new TheTV_BUS();
         nhanVien_BUS nhanVien = new nhanVien_BUS();
+
+        BookLending bookLending = new BookLending();
         public BookManagement()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace LIBRARY.Forms
         {
             foreach (Control control in layoutControl1.Controls)
             {
-                if (control is TextEdit)
+                if (control is TextEdit || control is DateTimePicker)
                     control.ResetText();
             }
         }
@@ -36,16 +38,16 @@ namespace LIBRARY.Forms
         private void BookManagement_Load(object sender, EventArgs e)
         {
             resetText();
+            checkedListBoxControl1.Hide();
+            bookLending.Hide();
             ID.Focus();
-            //
-            CardID.DataSource = the.getList();
-            BookID.DataSource = sach.getList();
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    if ((DateTime)row.Cells[4].Value > DateTime.Now)
-            //        row.DefaultCellStyle.BackColor = Color.Red;
-            //}
-                
+            
+            IDCard.DataSource = the.getList();
+
+            IDManager.DataSource = nhanVien.getList();
+
+            checkedListBoxControl1.DataSource = sach.getListAvailable();
+
             dataGridView1.DataSource = muonTra.getList();
             dataGridView1.AutoResizeColumns();
         }
@@ -86,23 +88,27 @@ namespace LIBRARY.Forms
             {
                 muonTra mt = new muonTra();
                 mt.maMuon = ID.Text;
-                mt.maSach = BookID.SelectedItem.ToString();
                 mt.ngayMuon = BorrowingDate.Value.ToString();
-                mt.ngayTra = ReturnDate.Value.ToString();
-                mt.soNgayMuon = (BorrowingDate.Value - ReturnDate.Value).Days;
-                mt.hinhThuc = comboBox3.SelectedItem.ToString();
-                mt.maThe = CardID.SelectedItem.ToString();
-                mt.maNV = ManagerID.SelectedItem.ToString();
-                if (mt.isNull())
-                {
-                    toolTip1.ToolTipTitle = "Warning";
-                    toolTip1.Show("Please enter full information", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
-                    return;
-                }
-                else
+                mt.ngayHan = DueDate.Value.ToString();
+                mt.maThe = IDCard.SelectedValue.ToString();
+                mt.maNV = IDManager.SelectedValue.ToString();
+                //if (mt.isNull())
+                //{
+                //    toolTip1.ToolTipTitle = "Warning";
+                //    toolTip1.Show("Please enter full information", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
+                //    return;
+                //}
+                //else
                 {
                     if (muonTra.them(mt))
                     {
+                        foreach(int itemIndex in checkedListBoxControl1.CheckedIndices)
+                        {
+                            mt.maSach = checkedListBoxControl1.GetItemValue(itemIndex).ToString();
+                            if (muonTra.themp(mt))
+                                sach.capNhatTrangThai(mt.maSach, false);
+                        }
+
                         BookManagement_Load(sender, e);
                         resetText();
                     }
@@ -133,12 +139,15 @@ namespace LIBRARY.Forms
                 {
                     DialogResult dialog = MessageBox.Show("Are you sure you want to delete this row!!", "Question", MessageBoxButtons.OKCancel);
                     if (dialog == DialogResult.OK)
+                    {
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
                             muonTra.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-                            BookManagement_Load(sender, e);
-                            resetText();
+                           
                         }
+                        BookManagement_Load(sender, e);
+                        resetText();
+                    }
                 }
                 else
                 {
@@ -160,12 +169,10 @@ namespace LIBRARY.Forms
                 {
                     int i = dataGridView1.SelectedRows[0].Index;
                     ID.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    BookID.SelectedItem = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                    comboBox3.SelectedItem = dataGridView1.Rows[i].Cells[2].Value.ToString();
                     BorrowingDate.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
-                    ReturnDate.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
-                    CardID.SelectedItem = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                    ManagerID.SelectedItem = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                    DueDate.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                    IDCard.SelectedItem = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    IDManager.SelectedItem = dataGridView1.Rows[i].Cells[2].Value.ToString();
                 }
                 else
                     return;
@@ -178,9 +185,83 @@ namespace LIBRARY.Forms
 
         private void ReaderForm_Closing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Book Management Window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialog == DialogResult.Cancel)
-                e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Book Management Window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
+        }
+
+        private void BorrowingDate_ValueChanged(object sender, EventArgs e)
+        {
+            DueDate.MinDate = BorrowingDate.Value;
+            DueDate.Value = BorrowingDate.Value.AddMonths(1);
+        }
+
+        private void checkButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkButton1.Checked == false)
+                checkedListBoxControl1.Hide();
+            else
+            {
+                checkedListBoxControl1.Show();
+            }
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        { 
+            bookLending.Load += BookLending_Load;
+            bookLending.windowsUIButtonPanel1.ButtonClick += windowsUIButtonPanel_ButtonClick;
+            bookLending.ShowDialog();
+        }
+
+        private void BookLending_Load(object sender, EventArgs e)
+        {       
+           bookLending.dataGridView2.DataSource = muonTra.getCTMTList(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+        }
+        private void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            string tag = ((WindowsUIButton)e.Button).Tag.ToString();
+            switch (tag)
+            {
+                case "refresh":
+                    BookLending_Load(sender, e);
+                    break;
+                case "close":
+                    bookLending.Hide();
+                    break;
+                case "return":
+                    Return(sender, e);
+                    BookLending_Load(sender, e);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Return(object sender, EventArgs e)
+        {
+            if (bookLending.dataGridView2.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in bookLending.dataGridView2.SelectedRows)
+                {
+                    string muonID = row.Cells[0].Value.ToString();
+                    string sachID = row.Cells[1].Value.ToString();
+                    muonTra.suaMT(muonID, sachID);
+                    sach.capNhatTrangThai(sachID, true);
+                }
+            }
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            string str = textEdit1.Text.ToString();
+            if (string.IsNullOrWhiteSpace(str))
+                dataGridView1.DataSource = muonTra.getList();
+            else
+                dataGridView1.DataSource = muonTra.timkiem(str, str);
+            dataGridView1.AutoResizeColumns();
         }
     }
 }

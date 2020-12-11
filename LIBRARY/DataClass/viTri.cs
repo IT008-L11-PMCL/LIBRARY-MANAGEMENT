@@ -12,5 +12,10 @@ namespace LIBRARY.DataClass
         public string khu { get; set; }
         public string ngan { get; set; }
         public string ke { get; set; }
+
+        public viTri()
+        {
+            khu = ke = ngan = "null";
+        }    
     }
 }

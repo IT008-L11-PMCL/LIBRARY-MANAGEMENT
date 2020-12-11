@@ -11,14 +11,14 @@ namespace LIBRARY.DAO
 {
     class nhanVien_DAO:dataProvider
     {
-        public void delete(string maNV)
+        public void delete(string UserName)
         {
-            string sqlCommand = "delete from NHANVIEN where MaNV = '" + maNV + "'";
+            string sqlCommand = "delete from NHANVIEN where UserName = '" + UserName + "'";
             Excute(sqlCommand);
         }
         public void update(nhanVien n)
         {
-            string sqlCommand = string.Format("update NHANVIEN set HoTen = '{0}', NgaySinh = '{1}', SoDT = '{2} where MaNV = '{3}'", n.hoTen, n.ngaySinh, n.sdt, n.maNV);
+            string sqlCommand = string.Format("update NHANVIEN set HoTen = N'{0}', NgaySinh = '{1}', SoDT = '{2}  where UserName = '{3}'", n.hoTen, n.ngaySinh, n.sdt, n.maNV);
             Excute(sqlCommand);
         }
         public DataTable search(string s, string tuKhoa)
@@ -28,9 +28,9 @@ namespace LIBRARY.DAO
         }
         public bool insert(nhanVien n)
         {
-            if (dataTable("select * from NHANVIEN where MaNV ='" + n.maNV + "'").Rows.Count > 0)
+            if (dataTable("select * from NHANVIEN where UserName ='" + n.maNV + "'").Rows.Count > 0)
                 return false;
-            string sqlCommand = string.Format("insert into NHANVIEN values ('{0}','{1}','{2}','{3}')", n.maNV, n.hoTen, n.ngaySinh, n.sdt);
+            string sqlCommand = string.Format("insert into NHANVIEN values ('{0}',N'{1}','{2}','{3}')", n.maNV, n.hoTen, n.ngaySinh, n.sdt);
             Excute(sqlCommand);
             return true;
         }
@@ -39,5 +39,20 @@ namespace LIBRARY.DAO
             string sqlCommand = "select * from NHANVIEN";
             return dataTable(sqlCommand);
         }
+
+        public DataTable checkUser(string userName, string passWord)
+        {
+            string sqlCommand = "select * from USERS where UserName = '" + userName + "' and PassWord = '" + passWord + "'";
+            return dataTable(sqlCommand);
+        }
+
+        public bool insertUser(nhanVien n)
+        {
+            if(dataTable("select * from USERS where UserName ='" + n.maNV + "'").Rows.Count == 1)
+                    return false;
+            string sqlCommand = string.Format("insert into USERS values ('{0}','{1}')", n.maNV, n.passWord);
+            Excute(sqlCommand);
+            return true;
+        }       
     }
 }

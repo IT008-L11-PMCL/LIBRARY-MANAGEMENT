@@ -3,6 +3,8 @@ using DevExpress.XtraEditors;
 using LIBRARY.BUSS;
 using LIBRARY.DataClass;
 using System;
+using System.Data;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace LIBRARY
@@ -27,6 +29,19 @@ namespace LIBRARY
         private void Form1_Load(object sender, EventArgs e)
         {
             resetText();
+
+            //MessageBox.Show(string.Format("{0}: {1}", dataGridView1.Rows[0].Cells[2].Value.GetType().Name, (dataGridView1.Rows[0].Cells[2].Value == null ? "NULL" : dataGridView1.Rows[0].Cells[2].Value.ToString())));
+            if (the.getList().Rows.Count > 0)
+                foreach (DataRow row in the.getList().Rows)
+                {
+                    DateTime dateTime = DateTime.Parse(row["NgayHetHan"].ToString());
+                    if (dateTime < DateTime.Now)
+                    {
+                        string mt = row["MaThe"].ToString();
+                        the.capNhatTT(mt, false);
+                    }
+                }
+
             CardID.Focus();
             dataGridView1.DataSource = the.getList();
             dataGridView1.AutoResizeColumns();
@@ -62,7 +77,8 @@ namespace LIBRARY
                 t.maThe =  CardID.Text;
                 t.ngayBD = IDate.Value.ToString();
                 t.ngayHH = EDate.Value.ToString();
-                t.ghiChu = Note.Text;
+                if (Note.Text != "")
+                    t.ghiChu = Note.Text;
                 if (t.isNull())
                 {
                     toolTip1.ToolTipTitle = "Warning";
@@ -105,10 +121,10 @@ namespace LIBRARY
                     if (dialog == DialogResult.OK)
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
-                            the.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-                            Form1_Load(sender, e);
-                            resetText();
+                            the.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());                       
                         }
+                    Form1_Load(sender, e);
+                    resetText();
                 }
                 else
                 {
@@ -118,7 +134,7 @@ namespace LIBRARY
             }
             catch(Exception exc)
             {
-                MessageBox.Show(exc.Message, "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This card's using\nCan't delete!!", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -138,16 +154,35 @@ namespace LIBRARY
                     return;
             }
             catch(Exception exc)
-            {
+            { 
                 MessageBox.Show(exc.Message,"Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void CardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Cards window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialog == DialogResult.Cancel)
-                e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Cards window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
+        }
+
+        private void IDate_ValueChanged(object sender, EventArgs e)
+        {
+            EDate.MinDate = IDate.Value;
+            EDate.Value = IDate.Value.AddYears(1);
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            string str = textEdit1.Text;
+            if (string.IsNullOrWhiteSpace(str))
+                dataGridView1.DataSource = the.getList();
+            else
+                dataGridView1.DataSource = the.timkiem("MaThe", str);
+            dataGridView1.AutoResizeColumns();
         }
     }
 }

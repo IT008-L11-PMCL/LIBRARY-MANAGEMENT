@@ -30,5 +30,10 @@ namespace LIBRARY.BUSS
         {
             return the.search(s, tk);
         }
+
+        public void capNhatTT(string s, bool b)
+        {
+            the.updateStatus(s, b);
+        }
     }
 }

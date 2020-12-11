@@ -13,6 +13,11 @@ namespace LIBRARY.BUSS
         {
             return sach.loadSach();
         }
+        public DataTable getListAvailable()
+        {
+            return sach.loadSachCoSan();
+        }
+
         public bool them(sach s)
         {
             return sach.insert(s);
@@ -31,6 +36,16 @@ namespace LIBRARY.BUSS
         public DataTable timkiem(string s, string tk)
         {
             return sach.search(s, tk);
+        }
+
+        public DataTable thongKe()
+        {
+            return sach.thongKe();
+        }
+
+        public void capNhatTrangThai(string str, bool b)
+        {
+            sach.updateStatus(str, b);
         }
     }
 }
