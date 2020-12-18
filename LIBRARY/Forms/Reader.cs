@@ -65,7 +65,7 @@ namespace LIBRARY.Forms
                 d.maDG = ReaderID.Text;
                 d.tenDG = ReaderName.Text;
                 d.diaChi = Address.Text;
-                d.maThe = CardID.Text;
+                d.maThe = CardID.SelectedValue.ToString();              
                 d.ghiChu = Note.Text;
                 if (d.isNull())
                 {
@@ -77,17 +77,19 @@ namespace LIBRARY.Forms
                 {
                     if (docGia.them(d))
                     {
+                        the.capNhatTT(d.maDG, "Đang sử dụng");
                         ReaderForm_Load(sender, e);
                         resetText();
+                       
                     }
                     else
                     {
                         if (docGia.sua(d))
-                        {
+                        {                          
                             ReaderForm_Load(sender, e);
                             resetText();
                         }
-                        else return;
+                        else throw new Exception("Can't insert or update!!");
 
                     }
 
@@ -110,9 +112,10 @@ namespace LIBRARY.Forms
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
                             docGia.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-                            ReaderForm_Load(sender, e);
-                            resetText();
+
                         }
+                    ReaderForm_Load(sender, e);
+                    resetText();
                 }
                 else
                 {
@@ -136,7 +139,7 @@ namespace LIBRARY.Forms
                     ReaderID.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
                     ReaderName.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
                     Address.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                    CardID.SelectedItem = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    CardID.SelectedValue = dataGridView1.Rows[i].Cells[3].Value.ToString();
                     Note.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
                 }
                 else

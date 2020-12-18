@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010;
 using LIBRARY.DataClass;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace LIBRARY.Forms
 {
@@ -15,6 +17,7 @@ namespace LIBRARY.Forms
         theLoai_BUS theLoai = new theLoai_BUS();
         viTri_BUS viTri = new viTri_BUS();
         NgonNgu_BUS ngonNgu = new NgonNgu_BUS();
+        string fileName;
         public Books()
         {
             InitializeComponent();
@@ -67,8 +70,27 @@ namespace LIBRARY.Forms
                 case "insert":
                     Insert(sender, e);
                     break;
+                case "export":
+                    Export(sender, e);
+                    break;
                 default:
                     break;
+            }
+        }
+
+        private void Export(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "xls files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "To Excel";
+            saveFileDialog.FileName = "book_report.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fileName = saveFileDialog.FileName;
+
+                progressPanel1.Visible = true;
+                backgroundWorker1.RunWorkerAsync();
             }
         }
 
@@ -190,6 +212,26 @@ namespace LIBRARY.Forms
             else
                 dataGridView1.DataSource = sach.getList();
             dataGridView1.AutoResizeColumns();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            try
+            { int columnCount = dataGridView1.ColumnCount;
+                object[] columnHeader = new object[columnCount];
+                for (int i = 0; i < columnCount; i++)
+                    columnHeader[i] = dataGridView1.Columns[i].HeaderText.ToString();
+                new ExcelExport().Export(sach.getList(),"LIST OF BOOKS",columnHeader, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Oops");
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            progressPanel1.Visible = false;
         }
     }
 }

@@ -48,6 +48,20 @@ namespace LIBRARY.Forms
 
             checkedListBoxControl1.DataSource = sach.getListAvailable();
 
+            foreach(DataRow row in muonTra.getList().Rows)
+            {
+                DateTime dateTime = DateTime.Parse(row["NgayHan"].ToString());
+                TimeSpan timeSpan = DateTime.Now - dateTime;
+                if (timeSpan.Days >= 60)
+                {
+                    foreach (DataRow r in muonTra.getCTMTList(row["MaMuon"].ToString()).Rows)
+                    {
+                        sach.capNhatTrangThai(r["MaSach"].ToString(), "Mất");
+                    }
+
+                }    
+                    
+            }     
             dataGridView1.DataSource = muonTra.getList();
             dataGridView1.AutoResizeColumns();
         }
@@ -69,17 +83,9 @@ namespace LIBRARY.Forms
                 case "insert":
                     Insert(sender, e);
                     break;
-                case "extend":
-                    Extend(sender, e);
-                    break;
                 default:
                     break;
             }
-        }
-
-        private void Extend(object sender,EventArgs e)
-        {
-           
         }
 
         private void Insert(object sender, EventArgs e)
@@ -105,8 +111,8 @@ namespace LIBRARY.Forms
                         foreach(int itemIndex in checkedListBoxControl1.CheckedIndices)
                         {
                             mt.maSach = checkedListBoxControl1.GetItemValue(itemIndex).ToString();
-                            if (muonTra.themp(mt))
-                                sach.capNhatTrangThai(mt.maSach, false);
+                            if(muonTra.themp(mt))
+                               sach.capNhatTrangThai(mt.maSach, "Đã mượn");
                         }
 
                         BookManagement_Load(sender, e);
@@ -249,7 +255,7 @@ namespace LIBRARY.Forms
                     string muonID = row.Cells[0].Value.ToString();
                     string sachID = row.Cells[1].Value.ToString();
                     muonTra.suaMT(muonID, sachID);
-                    sach.capNhatTrangThai(sachID, true);
+                    sach.capNhatTrangThai(sachID, "Có sẵn");
                 }
             }
         }

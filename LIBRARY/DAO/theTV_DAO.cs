@@ -39,18 +39,14 @@ namespace LIBRARY.DAO
             return dataTable(sqlCommand);
         }
 
-        public void updateStatus(string maThe, bool b)
+        public void updateStatus(string maThe, string b)
         {
-            if (b)
-            {
-                string sqlcommand = "update THETHUVIEN set TrangThai = N'Đang sử dụng' where MaThe = '" + maThe + "'";
-                Excute(sqlcommand);
-            }
-            else
-            {
-                string sqlcommand = "update THETHUVIEN set TrangThai = N'Hết hạn' where MaThe = '" + maThe + "'";
-                Excute(sqlcommand);
-            }
+
+
+            string sqlcommand = "update THETHUVIEN set TrangThai = N'" + b + "' where MaThe = '" + maThe + "'";
+            Excute(sqlcommand);
+            
+            
         }
 
         public DataTable getListAvai()

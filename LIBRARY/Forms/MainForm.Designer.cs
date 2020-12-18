@@ -34,14 +34,12 @@
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
@@ -54,7 +52,6 @@
             this.Cards = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Readers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -64,7 +61,6 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
@@ -116,7 +112,6 @@
             this.Cards,
             this.accordionControlElement5,
             this.Readers,
-            this.accordionControlElement10,
             this.accordionControlElement3});
             this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
@@ -140,6 +135,7 @@
             // 
             // accordionControlElement5
             // 
+            this.accordionControlElement5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement5.ImageOptions.SvgImage")));
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Book Management";
@@ -152,13 +148,6 @@
             this.Readers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.Readers.Text = "Readers";
             this.Readers.Click += new System.EventHandler(this.Readers_Click);
-            // 
-            // accordionControlElement10
-            // 
-            this.accordionControlElement10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement10.ImageOptions.SvgImage")));
-            this.accordionControlElement10.Name = "accordionControlElement10";
-            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement10.Text = "DashBoard";
             // 
             // accordionControlElement3
             // 
@@ -212,7 +201,6 @@
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barLargeButtonItem1,
             this.barSubItem1,
-            this.skinBarSubItem1,
             this.barLargeButtonItem2,
             this.barButtonItem1});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
@@ -223,7 +211,6 @@
             this.fluentDesignFormControl1.Size = new System.Drawing.Size(732, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinBarSubItem1);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem1);
             // 
             // barLargeButtonItem1
@@ -237,14 +224,6 @@
             this.barSubItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.barSubItem1.Id = 3;
             this.barSubItem1.Name = "barSubItem1";
-            // 
-            // skinBarSubItem1
-            // 
-            this.skinBarSubItem1.Caption = "Theme";
-            this.skinBarSubItem1.Id = 8;
-            this.skinBarSubItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("skinBarSubItem1.ImageOptions.SvgImage")));
-            this.skinBarSubItem1.Name = "skinBarSubItem1";
-            this.skinBarSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
             // 
             // barLargeButtonItem2
             // 
@@ -266,6 +245,7 @@
             this.barButtonItem1.DropDownControl = this.galleryDropDown1;
             this.barButtonItem1.Id = 12;
             this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.barButtonItem1.Name = "barButtonItem1";
             // 
             // galleryDropDown1
@@ -281,41 +261,41 @@
             superToolTip1.Items.Add(toolTipItem1);
             galleryItem1.SuperTip = superToolTip1;
             galleryItem1.Tag = "profile";
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1});
-            galleryItemGroup2.Caption = "Account";
+            galleryItem1.Value = 0;
             galleryItem2.Caption = "Register a new account";
-            galleryItem2.Description = "Register a new account";
             galleryItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
             toolTipItem2.Text = "Register a new account";
             superToolTip2.Items.Add(toolTipItem2);
             galleryItem2.SuperTip = superToolTip2;
             galleryItem2.Tag = "register";
+            galleryItem2.Value = 1;
             galleryItem3.Caption = "Log out";
             galleryItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
             toolTipItem3.Text = "Log out";
             superToolTip3.Items.Add(toolTipItem3);
             galleryItem3.SuperTip = superToolTip3;
             galleryItem3.Tag = "logout";
-            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem2,
-            galleryItem3});
-            galleryItemGroup3.Caption = "System";
+            galleryItem3.Value = 2;
             galleryItem4.Caption = "Close";
             galleryItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
             toolTipItem4.Text = "Close";
             superToolTip4.Items.Add(toolTipItem4);
             galleryItem4.SuperTip = superToolTip4;
             galleryItem4.Tag = "close";
-            galleryItemGroup3.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem4.Value = 3;
+            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem1,
+            galleryItem2,
+            galleryItem3,
             galleryItem4});
             this.galleryDropDown1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1,
-            galleryItemGroup2,
-            galleryItemGroup3});
+            galleryItemGroup1});
+            this.galleryDropDown1.Gallery.ShowGroupCaption = false;
+            this.galleryDropDown1.Gallery.ShowScrollBar = DevExpress.XtraBars.Ribbon.Gallery.ShowScrollBar.Hide;
             this.galleryDropDown1.Gallery.ItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.galleryDropDown1_Gallery_ItemClick);
             this.galleryDropDown1.Manager = this.fluentFormDefaultManager1;
             this.galleryDropDown1.Name = "galleryDropDown1";
+            this.galleryDropDown1.ShowCaption = true;
             // 
             // fluentFormDefaultManager1
             // 
@@ -324,10 +304,9 @@
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barLargeButtonItem1,
             this.barSubItem1,
-            this.skinBarSubItem1,
             this.barLargeButtonItem2,
             this.barButtonItem1});
-            this.fluentFormDefaultManager1.MaxItemId = 37;
+            this.fluentFormDefaultManager1.MaxItemId = 41;
             this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFontEdit1});
             // 
@@ -393,6 +372,7 @@
             this.Text = "Library Management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeDocument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
@@ -419,7 +399,6 @@
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
-        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemFontEdit repositoryItemFontEdit1;
         private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -431,7 +410,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup documentGroup1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document homeDocument;
     }

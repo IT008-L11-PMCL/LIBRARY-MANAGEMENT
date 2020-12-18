@@ -17,16 +17,10 @@ namespace LIBRARY.DAO
             Excute(sqlCommand1);
             Excute(sqlCommand);
         }
-        public void delete(string maMuon, string maSach)
-        {
-            string sqlCommand = "delete from CTMT where MaMuon = '" + maMuon + "' and MaSach = '" + maSach + "'";
-            Excute(sqlCommand);
-
-        }
 
         public void update(muonTra muon)
         {
-            string sqlCommand = string.Format("update MUONTRA set MaThe = '{0}', MaNV = '{1}', NgayMuon = '{2}', NgayHan = '{3}'  where MaMuon = '{4}' ",muon.maThe,muon.maNV,muon.ngayMuon,muon.ngayHan,muon.maMuon);
+            string sqlCommand = string.Format("update MUONTRA  MaNV = '{0}', NgayMuon = '{1}', NgayHan = '{2}'  where MaMuon = '{3}' ",muon.maNV,muon.ngayMuon,muon.ngayHan,muon.maMuon);
             Excute(sqlCommand);
         }
         public void update(string maMuon, string maSach)

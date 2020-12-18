@@ -46,24 +46,60 @@ namespace LIBRARY.DAO
             return dataTable(sqlCommand);
         }
 
-        public DataTable thongKe()
+        public DataTable loadSachDaMuon()
         {
-            string sqlCommand = "select count(distinct MaSach) as TongSo,(select count(distinct MaSach) from SACH where TinhTrang = N'Có sẵn') as CoSan,(select count(distinct MaSach)from SACH where TinhTrang = N'Đã mượn') as DaMuon,(select count(distinct MaSach)from SACH where TinhTrang = N'Mất') as Mat,(select count(distinct MaSach) from SACH where TinhTrang = N'Trưng Bày') as TrungBay from SACH ";
+            string sqlCommand = "select * from SACH where TinhTrang = N'Đã mượn'";
             return dataTable(sqlCommand);
         }
-         public void updateStatus(string maSach, bool b)
+        public DataTable loadSachTrungBay()
         {
-            if(!b)
-            {
-                string sqlcommand = "update SACH set TinhTrang = N'Đã mượn' where MaSach = '" + maSach + "'";
-                Excute(sqlcommand);
-            }
-            else
-            {
-                string sqlcommand = "update SACH set TinhTrang = N'Có sẵn' where MaSach = '" + maSach + "'";
-                Excute(sqlcommand);
+            string sqlCommand = "select * from SACH where TinhTrang = N'Trưng bày'";
+            return dataTable(sqlCommand);
+        }
+        public DataTable loadSachMat()
+        {
+            string sqlCommand = "select * from SACH where TinhTrang = N'Mất'";
+            return dataTable(sqlCommand);
+        }
 
-            }
+        public void updateStatus(string maSach, string b)
+        {
+            string sqlcommand = "update SACH set TinhTrang = N'" + b + "' where MaSach = '" + maSach + "'";
+            Excute(sqlcommand);                 
+        }  
+
+
+        
+        public int total()
+        {
+            string sqlCommand = "select count(distinct MaSach) from SACH";
+            int t = (int)ExcuteScalar(sqlCommand);
+            return t;
+        }
+        public int available()
+        {
+            string sqlCommand = "select count(distinct MaSach) from SACH where TinhTrang = N'Có sẵn'";
+            int t = (int)ExcuteScalar(sqlCommand);
+            return t;
+        }
+        public int borrowing()
+        {
+            string sqlCommand = "select count(distinct MaSach) from SACH where TinhTrang = N'Đã mượn'";
+            int t = (int)ExcuteScalar(sqlCommand);
+            return t;
+        }
+        public int display()
+        {
+            string sqlCommand = "select count(distinct MaSach) from SACH where TinhTrang = N'Trưng bày'";
+            int t = (int)ExcuteScalar(sqlCommand);
+            return t;
+        }
+
+        public int lost()
+        {
+            string sqlCommand = "select count(distinct MaSach) from SACH where TinhTrang = N'Mất'";
+            int t = (int)ExcuteScalar(sqlCommand);
+            return t;
         }
     }
 }

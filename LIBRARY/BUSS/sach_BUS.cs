@@ -17,7 +17,18 @@ namespace LIBRARY.BUSS
         {
             return sach.loadSachCoSan();
         }
-
+        public DataTable getListBeingBorrowed()
+        {
+            return sach.loadSachDaMuon();
+        }
+        public DataTable getListBeingDisplayed()
+        {
+            return sach.loadSachTrungBay();
+        }
+        public DataTable getListLost()
+        {
+            return sach.loadSachMat();
+        }
         public bool them(sach s)
         {
             return sach.insert(s);
@@ -36,16 +47,36 @@ namespace LIBRARY.BUSS
         public DataTable timkiem(string s, string tk)
         {
             return sach.search(s, tk);
-        }
+        }       
 
-        public DataTable thongKe()
-        {
-            return sach.thongKe();
-        }
-
-        public void capNhatTrangThai(string str, bool b)
+        public void capNhatTrangThai(string str, string b)
         {
             sach.updateStatus(str, b);
+        }
+
+        public int tongSach()
+        {
+            return sach.total();
+        }
+
+        public int coSan()
+        {
+            return sach.available();
+        }
+
+        public int daMuon()
+        {
+            return sach.borrowing();
+        }
+
+        public int trungBay()
+        {
+            return sach.display();
+        }
+
+        public int mat()
+        {
+            return sach.lost();
         }
     }
 }

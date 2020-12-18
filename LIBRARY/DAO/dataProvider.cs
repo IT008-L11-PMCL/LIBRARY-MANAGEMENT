@@ -8,7 +8,7 @@ using System.Data;
 
 namespace LIBRARY.DataClass
 {
-    class dataProvider
+    public class dataProvider
     {
         public static string connectionString = @"Data Source=DESKTOP-I2KUT1M\CITADEL;Initial Catalog=QLTV;Integrated Security=True";
         public DataTable dataTable(string cmd)
@@ -32,6 +32,32 @@ namespace LIBRARY.DataClass
                 command.ExecuteNonQuery();
                 connection.Close();
             }
+        }
+
+        public object ExcuteScalar(string cmd)
+        {
+            object obj;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(cmd, connection);
+                obj = command.ExecuteScalar();
+                connection.Close();
+            }
+            return obj;
+        }
+
+        public SqlDataReader ExcuteReader(string cmd)
+        {
+             SqlDataReader obj;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(cmd, connection);
+                obj = command.ExecuteReader();
+                connection.Close();
+            }
+            return obj;
         }
     }
 }

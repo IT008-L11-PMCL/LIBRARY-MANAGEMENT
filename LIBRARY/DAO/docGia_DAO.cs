@@ -18,7 +18,7 @@ namespace LIBRARY.DAO
         }
         public void update(docGia d)
         {
-            string sqlCommand = string.Format("update DOCGIA set TenDG = N'{0}',DiaChi = N'{1}',MaThe='{2}',GhiChu = N'{3}' where MaDG = {4}",d.tenDG,d.diaChi,d.maThe,d.ghiChu,d.maDG);
+            string sqlCommand = string.Format("update DOCGIA set TenDG = N'{0}',DiaChi = N'{1}' ,GhiChu = N'{2}' where MaDG = {3}", d.tenDG, d.diaChi, d.ghiChu, d.maDG);
             Excute(sqlCommand);
         }
         public DataTable search(string s, string tuKhoa)
@@ -39,5 +39,7 @@ namespace LIBRARY.DAO
             string sqlCommand = "select * from DOCGIA";
             return dataTable(sqlCommand);
         }
+
+
     }
 }

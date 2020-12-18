@@ -68,7 +68,7 @@ namespace LIBRARY.Forms
 
         private void Authors_Click(object sender, EventArgs e)
         {
-            
+          
         }
 
         private void Language_Click(object sender, EventArgs e)
@@ -140,14 +140,15 @@ namespace LIBRARY.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.ShowDialog();
+            accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
+
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
+        
     }
 }

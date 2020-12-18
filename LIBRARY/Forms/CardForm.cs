@@ -38,7 +38,7 @@ namespace LIBRARY
                     if (dateTime < DateTime.Now)
                     {
                         string mt = row["MaThe"].ToString();
-                        the.capNhatTT(mt, false);
+                        the.capNhatTT(mt, "Hết hạn");
                     }
                 }
 
@@ -132,7 +132,7 @@ namespace LIBRARY
                     toolTip1.Show("Select the rows you want to delete!", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
                 }
             }
-            catch(Exception exc)
+            catch
             {
                 MessageBox.Show("This card's using\nCan't delete!!", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -70,7 +70,8 @@ namespace LIBRARY.Forms
             }
             else
             {
-                MessageBox.Show("Login Failed", "Oops", MessageBoxButtons.OK);
+                MessageBox.Show("Wrong password", "Oops", MessageBoxButtons.OK);
+                passWord.ResetText();
             }
                 
         }

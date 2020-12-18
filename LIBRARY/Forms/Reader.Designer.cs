@@ -51,10 +51,10 @@
             this.ReaderID = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -76,10 +76,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReaderID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.windowsUIButtonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -121,7 +121,7 @@
             // Note
             // 
             this.Note.EditValue = "";
-            this.Note.Location = new System.Drawing.Point(425, 45);
+            this.Note.Location = new System.Drawing.Point(108, 78);
             this.Note.Name = "Note";
             this.Note.Size = new System.Drawing.Size(217, 20);
             this.Note.StyleController = this.layoutControl1;
@@ -131,7 +131,7 @@
             // 
             this.CardID.DisplayMember = "MaThe";
             this.CardID.FormattingEnabled = true;
-            this.CardID.Location = new System.Drawing.Point(425, 12);
+            this.CardID.Location = new System.Drawing.Point(108, 45);
             this.CardID.Name = "CardID";
             this.CardID.Size = new System.Drawing.Size(217, 21);
             this.CardID.TabIndex = 3;
@@ -139,7 +139,7 @@
             // 
             // Address
             // 
-            this.Address.Location = new System.Drawing.Point(108, 78);
+            this.Address.Location = new System.Drawing.Point(425, 45);
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(217, 20);
             this.Address.StyleController = this.layoutControl1;
@@ -147,7 +147,7 @@
             // 
             // ReaderName
             // 
-            this.ReaderName.Location = new System.Drawing.Point(108, 45);
+            this.ReaderName.Location = new System.Drawing.Point(425, 12);
             this.ReaderName.Name = "ReaderName";
             this.ReaderName.Size = new System.Drawing.Size(217, 20);
             this.ReaderName.StyleController = this.layoutControl1;
@@ -169,10 +169,10 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem5,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem2,
+            this.layoutControlItem5});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
@@ -204,46 +204,46 @@
             this.layoutControlItem1.Text = "Reader ID";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(84, 13);
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.ReaderName;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 33);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(317, 33);
-            this.layoutControlItem2.Text = "Reader\'s name";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(84, 13);
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.Address;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 66);
+            this.layoutControlItem3.Location = new System.Drawing.Point(317, 33);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem3.Size = new System.Drawing.Size(317, 34);
+            this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 1;
+            this.layoutControlItem3.Size = new System.Drawing.Size(317, 33);
             this.layoutControlItem3.Text = "Address";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(84, 13);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.CardID;
-            this.layoutControlItem5.Location = new System.Drawing.Point(317, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem5.Size = new System.Drawing.Size(317, 33);
-            this.layoutControlItem5.Text = "Card ID";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(84, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.Note;
-            this.layoutControlItem4.Location = new System.Drawing.Point(317, 33);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 66);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem4.Size = new System.Drawing.Size(317, 33);
+            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 2;
+            this.layoutControlItem4.Size = new System.Drawing.Size(317, 34);
             this.layoutControlItem4.Text = "Note";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(84, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.ReaderName;
+            this.layoutControlItem2.Location = new System.Drawing.Point(317, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem2.Size = new System.Drawing.Size(317, 33);
+            this.layoutControlItem2.Text = "Reader\'s name";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(84, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.CardID;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 33);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 1;
+            this.layoutControlItem5.Size = new System.Drawing.Size(317, 33);
+            this.layoutControlItem5.Text = "Card ID";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(84, 13);
             // 
             // windowsUIButtonPanel1
             // 
@@ -416,10 +416,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReaderID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.windowsUIButtonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
@@ -443,14 +443,10 @@
         private DevExpress.XtraEditors.TextEdit ReaderID;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolTip toolTip1;
         private DevExpress.XtraEditors.TextEdit Note;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -461,5 +457,9 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }
