@@ -22,7 +22,7 @@ namespace LIBRARY.DataClass
 
         public bool isNull()
         {
-            return (string.IsNullOrEmpty(maDG) || string.IsNullOrEmpty(tenDG) || string.IsNullOrEmpty(diaChi) || string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(ghiChu));
+            return (string.IsNullOrEmpty(maDG) || string.IsNullOrEmpty(tenDG));
         }
     }
 }

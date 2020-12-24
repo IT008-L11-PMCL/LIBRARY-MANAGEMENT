@@ -35,7 +35,7 @@ namespace LIBRARY.Forms
         private void BookForm_Load(object sender, EventArgs e)
         {
             resetText();
-            BookID.Focus();
+            //BookID.Focus();
             //
             AuthorID.DataSource = tacGia.getList();
             //
@@ -48,6 +48,7 @@ namespace LIBRARY.Forms
             LocationID.DataSource = viTri.getList();
 
             dataGridView1.DataSource = sach.getList();
+            BookID.Text = dataGridView1.Rows.Count.ToString("0000");
 
             State.SelectedIndex = 0;
             dataGridView1.AutoResizeColumns();
@@ -233,6 +234,19 @@ namespace LIBRARY.Forms
         {
             progressPanel1.Visible = false;
         }
+        private void AuthorID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (BookID.Text.Length > 9)
+                e.Handled = true;
+            if (e.KeyChar.ToString() == "\b")
+                e.Handled = false;
+            if (e.Handled)
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("ID length more than 10 character", BookID, BookID.Location, 5000);
+            }
+        }
+
     }
 }
 

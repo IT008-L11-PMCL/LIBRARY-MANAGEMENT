@@ -37,6 +37,8 @@ namespace LIBRARY.Forms
             chartControl1.Series["Books"].Points.Add(new SeriesPoint("Available", sach.coSan()));
             chartControl1.Series["Books"].Points.Add(new SeriesPoint("Being borrowed", sach.daMuon()));
             chartControl1.Series["Books"].Points.Add(new SeriesPoint("Being displayed", sach.trungBay()));
+            chartControl1.Series["Books"].Points.Add(new SeriesPoint("Lost", sach.mat()));
+
 
             dataGridView1.DataSource = sach.getListAvailable();
             //chartControl1.Series["Readers"].Points.Clear();

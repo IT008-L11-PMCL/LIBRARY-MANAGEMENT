@@ -48,21 +48,22 @@ namespace LIBRARY.Forms
 
             checkedListBoxControl1.DataSource = sach.getListAvailable();
 
-            foreach(DataRow row in muonTra.getList().Rows)
-            {
-                DateTime dateTime = DateTime.Parse(row["NgayHan"].ToString());
-                TimeSpan timeSpan = DateTime.Now - dateTime;
-                if (timeSpan.Days >= 60)
-                {
-                    foreach (DataRow r in muonTra.getCTMTList(row["MaMuon"].ToString()).Rows)
-                    {
-                        sach.capNhatTrangThai(r["MaSach"].ToString(), "Mất");
-                    }
+            //foreach(DataRow row in muonTra.getList().Rows)
+            //{
+            //    DateTime dateTime = DateTime.Parse(row["NgayHan"].ToString());
+            //    TimeSpan timeSpan = DateTime.Now - dateTime;
+            //    if (timeSpan.Days >= 60)
+            //    {
+            //        foreach (DataRow r in muonTra.getCTMTList(row["MaMuon"].ToString()).Rows)
+            //        {
+            //            sach.capNhatTrangThai(r["MaSach"].ToString(), "Mất");
+            //        }
 
-                }    
+            //    }    
                     
-            }     
+            //}     
             dataGridView1.DataSource = muonTra.getList();
+            ID.Text = dataGridView1.Rows.Count.ToString("0000");
             dataGridView1.AutoResizeColumns();
         }
 
@@ -98,13 +99,13 @@ namespace LIBRARY.Forms
                 mt.ngayHan = DueDate.Value.ToString();
                 mt.maThe = IDCard.SelectedValue.ToString();
                 mt.maNV = IDManager.SelectedValue.ToString();
-                //if (mt.isNull())
-                //{
-                //    toolTip1.ToolTipTitle = "Warning";
-                //    toolTip1.Show("Please enter full information", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
-                //    return;
-                //}
-                //else
+                if (mt.isNull()||checkedListBoxControl1.CheckedItems.Count<=0)
+                {
+                    toolTip1.ToolTipTitle = "Warning";
+                    toolTip1.Show("Please enter full information", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
+                    return;
+                }
+                else
                 {
                     if (muonTra.them(mt))
                     {
@@ -268,6 +269,20 @@ namespace LIBRARY.Forms
             else
                 dataGridView1.DataSource = muonTra.timkiem(str, str);
             dataGridView1.AutoResizeColumns();
+        }
+
+        private void ID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (ID.Text.Length > 9)
+                e.Handled = true;
+            if (e.KeyChar.ToString() == "\b")
+                e.Handled = false;
+            if (e.Handled)
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("ID length more than 10 character", ID, ID.Location, 5000);
+            }
+
         }
     }
 }

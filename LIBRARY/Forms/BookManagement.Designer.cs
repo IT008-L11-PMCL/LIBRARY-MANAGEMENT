@@ -152,6 +152,7 @@
             // IDManager
             // 
             this.IDManager.DisplayMember = "UserName";
+            this.IDManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.IDManager.FormattingEnabled = true;
             this.IDManager.Location = new System.Drawing.Point(111, 78);
             this.IDManager.Name = "IDManager";
@@ -162,6 +163,7 @@
             // IDCard
             // 
             this.IDCard.DisplayMember = "MaThe";
+            this.IDCard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.IDCard.FormattingEnabled = true;
             this.IDCard.Location = new System.Drawing.Point(111, 45);
             this.IDCard.Name = "IDCard";
@@ -173,10 +175,14 @@
             // 
             this.ID.Location = new System.Drawing.Point(111, 12);
             this.ID.Name = "ID";
+            this.ID.Properties.BeepOnError = false;
+            this.ID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.ID.Properties.MaskSettings.Set("mask", "\\LEND0000");
             this.ID.Size = new System.Drawing.Size(291, 20);
             this.ID.StyleController = this.layoutControl1;
             this.ID.TabIndex = 0;
             this.ID.ToolTip = "ID";
+            this.ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ID_KeyPress);
             // 
             // Root
             // 

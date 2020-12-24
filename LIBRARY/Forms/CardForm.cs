@@ -12,6 +12,7 @@ namespace LIBRARY
     public partial class CardForm : DevExpress.XtraEditors.XtraForm
     {
         TheTV_BUS the = new TheTV_BUS();
+        private string fileName;
         public CardForm()
         {
             InitializeComponent();
@@ -41,9 +42,10 @@ namespace LIBRARY
                         the.capNhatTT(mt, "Hết hạn");
                     }
                 }
-
+            progressPanel1.Visible = false;
             CardID.Focus();
             dataGridView1.DataSource = the.getList();
+            CardID.Text = dataGridView1.Rows.Count.ToString("0000");
             dataGridView1.AutoResizeColumns();
         }            
 
@@ -58,6 +60,9 @@ namespace LIBRARY
                 case "close":
                     this.Close();
                     break;
+                case "export":
+                    Export(sender, e);
+                    break;
                 case "delete":
                     Delete(sender, e);
                     break;
@@ -67,6 +72,41 @@ namespace LIBRARY
                 default:
                     break;
             }    
+        }
+        private void Export(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "xls files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "To Excel";
+            saveFileDialog.FileName = "card_report.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fileName = saveFileDialog.FileName;
+
+                progressPanel1.Visible = true;
+                backgroundWorker1.RunWorkerAsync();
+            }
+        }
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            try
+            {
+                int columnCount = dataGridView1.ColumnCount;
+                object[] columnHeader = new object[columnCount];
+                for (int i = 0; i < columnCount; i++)
+                    columnHeader[i] = dataGridView1.Columns[i].HeaderText.ToString();
+                new ExcelExport().Export(the.getList(), "LIST OF CARDS", columnHeader, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Oops");
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            progressPanel1.Visible = false;
         }
 
         private void Insert(object sender,EventArgs e)
@@ -183,6 +223,20 @@ namespace LIBRARY
             else
                 dataGridView1.DataSource = the.timkiem("MaThe", str);
             dataGridView1.AutoResizeColumns();
+        }
+
+        private void CardID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (CardID.Text.Length > 9)
+                e.Handled = true;
+            if (e.KeyChar.ToString() == "\b")
+                e.Handled = false;
+            if (e.Handled)
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("ID length more than 10 character", CardID, CardID.Location, 5000);
+            }
+
         }
     }
 }

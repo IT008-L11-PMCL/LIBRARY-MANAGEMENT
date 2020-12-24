@@ -9,63 +9,65 @@ namespace LIBRARY.BUSS
 {
     class ExcelExport
     {
-        public void Export(System.Data.DataTable table, string tit, object[]columnHeader,string fileName)
+        public void Export(System.Data.DataTable table, string tit, object[] columnHeader, string fileName)
         {
-              
-                int columnCount = table.Columns.Count;
-                Excel.Application xlApp = new Excel.Application();
-                if (xlApp == null)
-                {
-                    throw new Exception("Can't use the excel library");
 
-                }
-                xlApp.Visible = false;
+            int columnCount = table.Columns.Count;
+            Excel.Application xlApp = new Excel.Application();
+            if (xlApp == null)
+            {
+                throw new Exception("Can't use the excel library");
 
-                object misValue = System.Reflection.Missing.Value;
+            }
+            xlApp.Visible = false;
 
-                Workbook wb = xlApp.Workbooks.Add(misValue);
+            object misValue = System.Reflection.Missing.Value;
 
-                Worksheet ws = (Worksheet)wb.Worksheets[1];
+            Workbook wb = xlApp.Workbooks.Add(misValue);
 
-                if (ws == null)
-                {
-                    throw new Exception("Can't create worksheet");
-                }
+            Worksheet ws = (Worksheet)wb.Worksheets[1];
 
-                Range title = ws.get_Range((Range)(ws.Cells[1, 1]), (Range)(ws.Cells[1, columnCount]));
-                title.MergeCells = true;
-                title.Value2 = tit;
-                title.Font.Bold = true;
-                title.Font.Size = "18";
-                title.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            if (ws == null)
+            {
+                throw new Exception("Can't create worksheet");
+            }
 
-
-                Excel.Range headerRange = ws.get_Range((Range)(ws.Cells[2, 1]), (Range)(ws.Cells[2, columnCount]));
-                headerRange.Value2 = columnHeader;
-                headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
-                headerRange.Font.Bold = true;
-
-                int rowCount = table.Rows.Count;
-                object[,] cell = new object[rowCount, columnCount];
-
-                for (int i = 0; i < rowCount; i++)
-                    for (int j = 0; j < columnCount; j++)
-                        cell[i, j] = table.Rows[i][j].ToString();
-
-                ws.get_Range((Range)(ws.Cells[3, 1]), (Range)(ws.Cells[rowCount + 2, columnCount])).Value2 = cell;
+            Range title = ws.get_Range((Range)(ws.Cells[1, 1]), (Range)(ws.Cells[1, columnCount]));
+            title.MergeCells = true;
+            title.Value2 = tit;
+            title.Font.Bold = true;
+            title.Font.Size = "18";
+            title.HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
 
-                wb.SaveAs(fileName);          
-                wb.Close(true, misValue, misValue);
+            Excel.Range headerRange = ws.get_Range((Range)(ws.Cells[2, 1]), (Range)(ws.Cells[2, columnCount]));
+            headerRange.Value2 = columnHeader;
+            headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+            headerRange.Font.Bold = true;
 
-               
-                xlApp.Quit();
-                releaseObject(ws);
-                releaseObject(wb);
-                releaseObject(xlApp);
+            int rowCount = table.Rows.Count;
+            object[,] cell = new object[rowCount, columnCount];
 
-                System.Diagnostics.Process.Start(fileName);
-            
+            for (int i = 0; i < rowCount; i++)
+                for (int j = 0; j < columnCount; j++)
+                    cell[i, j] = table.Rows[i][j].ToString();
+
+            ws.get_Range((Range)(ws.Cells[3, 1]), (Range)(ws.Cells[rowCount + 2, columnCount])).Value2 = cell;
+            ws.Rows.AutoFit();
+            ws.Columns.AutoFit();
+
+
+            wb.SaveAs(fileName);
+            wb.Close(true, misValue, misValue);
+
+
+            xlApp.Quit();
+            releaseObject(ws);
+            releaseObject(wb);
+            releaseObject(xlApp);
+
+            System.Diagnostics.Process.Start(fileName);
+
         }
 
         private void releaseObject(object obj)

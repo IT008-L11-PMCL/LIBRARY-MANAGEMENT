@@ -20,7 +20,7 @@ namespace LIBRARY.DataClass
         public string tinhTrang { get; set; }
         public bool isNull()
         {
-            return (string.IsNullOrEmpty(maSach) || string.IsNullOrEmpty(tenSach) || string.IsNullOrEmpty(namXB)  || string.IsNullOrEmpty(ngonNgu) || string.IsNullOrEmpty(maXB) || string.IsNullOrEmpty(maTG) || string.IsNullOrEmpty(maTL) || string.IsNullOrEmpty(maVT) || string.IsNullOrEmpty(tinhTrang.ToString()));
+            return (string.IsNullOrEmpty(maSach) || string.IsNullOrEmpty(tenSach));
         }    
     }
 }

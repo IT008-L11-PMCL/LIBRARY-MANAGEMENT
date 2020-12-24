@@ -3,11 +3,13 @@ using DevExpress.XtraBars.Ribbon;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using LIBRARY.BUSS;
 
 namespace LIBRARY.Forms
 {
     public partial class MainForm : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        public string user = "";
         public MainForm()
         {
             InitializeComponent();
@@ -68,7 +70,8 @@ namespace LIBRARY.Forms
 
         private void Authors_Click(object sender, EventArgs e)
         {
-          
+            Authors authors = new Authors();
+            AddChild(authors);
         }
 
         private void Language_Click(object sender, EventArgs e)
@@ -88,13 +91,17 @@ namespace LIBRARY.Forms
             Location location = new Location();
             AddChild(location);
         }
-
+        //Profile profile = new Profile();
+        //nhanVien_BUS nhanVien = new nhanVien_BUS();
         private void galleryDropDown1_Gallery_ItemClick(object sender, DevExpress.XtraBars.Ribbon.GalleryItemClickEventArgs e)
         {
             string tag = ((GalleryItem)e.Item).Tag.ToString();
             switch (tag)
             {
                 case "profile":
+                    Profile profile = new Profile();
+                    profile.user = this.user;
+                    profile.ShowDialog();
                     break;
                 case "signin":
                     break;
@@ -108,8 +115,7 @@ namespace LIBRARY.Forms
                     Application.Exit();
                     break;
             }
-        }
-
+        }     
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Are you sure you want to exit! All data may be lost!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);

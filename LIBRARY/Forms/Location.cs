@@ -69,7 +69,11 @@ namespace LIBRARY.Forms
                 v.khu = Zone.Text;
                 v.ke = Shelf.Text;
                 v.ngan = Cell.Text;               
-                
+                if(v.isNull())
+                {
+                    toolTip1.ToolTipTitle = "Warning";
+                    toolTip1.Show("Please enter full information", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
+                }    
                     if (vt.them(v))
                     {
                         Location_Load(sender, e);
@@ -145,9 +149,26 @@ namespace LIBRARY.Forms
 
         private void CardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialog == DialogResult.Cancel)
-                e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
+        }
+
+        private void LocationID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (LocationID.Text.Length > 9)
+                e.Handled = true;
+            if (e.KeyChar.ToString() == "\b")
+                e.Handled = false;
+            if (e.Handled)
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("ID length more than 10 character", LocationID, LocationID.Location, 5000);
+            }
+
         }
     }
 }

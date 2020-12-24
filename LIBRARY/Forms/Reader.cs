@@ -11,6 +11,7 @@ namespace LIBRARY.Forms
     {
         docGia_BUS docGia = new docGia_BUS();
         TheTV_BUS the = new TheTV_BUS();
+        private string fileName;
         public Reader()
         {
             InitializeComponent();
@@ -31,7 +32,9 @@ namespace LIBRARY.Forms
             //
             CardID.DataSource = the.getList();
             //        
+            progressPanel1.Visible = false;
             dataGridView1.DataSource = docGia.getList();
+            ReaderID.Text = dataGridView1.Rows.Count.ToString("0000");
             dataGridView1.AutoResizeColumns();
         }
 
@@ -52,11 +55,49 @@ namespace LIBRARY.Forms
                 case "insert":
                     Insert(sender, e);
                     break;
+                case "export":
+                    Export(sender, e);
+                    break;
                 default:
                     break;
             }
         }
 
+        private void Export(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "xls files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "To Excel";
+            saveFileDialog.FileName = "reader_report.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fileName = saveFileDialog.FileName;
+
+                progressPanel1.Visible = true;
+                backgroundWorker1.RunWorkerAsync();
+            }
+        }
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            try
+            {
+                int columnCount = dataGridView1.ColumnCount;
+                object[] columnHeader = new object[columnCount];
+                for (int i = 0; i < columnCount; i++)
+                    columnHeader[i] = dataGridView1.Columns[i].HeaderText.ToString();
+                new ExcelExport().Export(docGia.getList(), "LIST OF READERS", columnHeader, fileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Oops");
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            progressPanel1.Visible = false;
+        }
         private void Insert(object sender, EventArgs e)
         {
             try
@@ -169,6 +210,20 @@ namespace LIBRARY.Forms
             else
                 dataGridView1.DataSource = docGia.timkiem("MaDG", str);
             dataGridView1.AutoResizeColumns();
+        }
+
+        private void ReaderID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (ReaderID.Text.Length > 9)
+                e.Handled = true;
+            if (e.KeyChar.ToString() == "\b")
+                e.Handled = false;
+            if (e.Handled)
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("ID length more than 10 character", ReaderID, ReaderID.Location, 5000);
+            }
+
         }
     }
 }

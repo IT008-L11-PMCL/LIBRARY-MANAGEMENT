@@ -18,7 +18,7 @@ namespace LIBRARY.DAO
         }
         public void update(tacGia t)
         {
-            string sqlCommand = string.Format("update TACGIA set TenTG = '{0}', Website = '{1}', GhiChu = '{2} where MaTG = '{3}'", t.tenTG, t.website, t.ghiChu, t.maTG);
+            string sqlCommand = string.Format("update TACGIA set TenTG = N'{0}', Website = '{1}', GhiChu = N'{2} where MaTG = '{3}'", t.tenTG, t.website, t.ghiChu, t.maTG);
             Excute(sqlCommand);
         }
         public DataTable search(string s, string tuKhoa)
@@ -30,7 +30,7 @@ namespace LIBRARY.DAO
         {
             if (dataTable("select * from TACGIA where MaTG ='" + t.maTG + "'").Rows.Count > 0)
                 return false;
-            string sqlCommand = string.Format("insert into TACGIA values ('{0}','{1}','{2}','{3}')", t.maTG, t.tenTG, t.website, t.ghiChu);
+            string sqlCommand = string.Format("insert into TACGIA values ('{0}',N'{1}','{2}',N'{3}')", t.maTG, t.tenTG, t.website, t.ghiChu);
             Excute(sqlCommand);
             return true;
         }

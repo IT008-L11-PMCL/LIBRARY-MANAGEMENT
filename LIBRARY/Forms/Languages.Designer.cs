@@ -100,9 +100,13 @@
             // 
             this.LanguageID.Location = new System.Drawing.Point(103, 12);
             this.LanguageID.Name = "LanguageID";
+            this.LanguageID.Properties.BeepOnError = false;
+            this.LanguageID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.LanguageID.Properties.MaskSettings.Set("mask", "\\L\\ANG000");
             this.LanguageID.Size = new System.Drawing.Size(255, 20);
             this.LanguageID.StyleController = this.layoutControl1;
             this.LanguageID.TabIndex = 4;
+            this.LanguageID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LanguageID_KeyPress);
             // 
             // Root
             // 
@@ -177,9 +181,9 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -238,6 +242,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "Languages";
             this.Text = "Languages";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CardForm_FormClosing);
             this.Load += new System.EventHandler(this.Categories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

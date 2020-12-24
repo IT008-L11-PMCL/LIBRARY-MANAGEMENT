@@ -58,14 +58,14 @@
             this.BookID = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,14 +91,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.BookID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.windowsUIButtonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
@@ -118,9 +118,9 @@
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(104, 33);
+            this.labelControl1.Size = new System.Drawing.Size(108, 33);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "BOOKs";
+            this.labelControl1.Text = "BOOKS";
             // 
             // layoutControl1
             // 
@@ -144,15 +144,15 @@
             // DatePublic
             // 
             this.DatePublic.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatePublic.Location = new System.Drawing.Point(107, 69);
+            this.DatePublic.Location = new System.Drawing.Point(107, 40);
             this.DatePublic.Name = "DatePublic";
             this.DatePublic.Size = new System.Drawing.Size(249, 20);
             this.DatePublic.TabIndex = 2;
             // 
             // State
             // 
-            this.State.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.State.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.State.FormattingEnabled = true;
             this.State.Items.AddRange(new object[] {
             "Có sẵn",
@@ -167,6 +167,7 @@
             // LanguageID
             // 
             this.LanguageID.DisplayMember = "TenNN";
+            this.LanguageID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LanguageID.FormattingEnabled = true;
             this.LanguageID.Location = new System.Drawing.Point(455, 98);
             this.LanguageID.Name = "LanguageID";
@@ -177,6 +178,7 @@
             // LocationID
             // 
             this.LocationID.DisplayMember = "MaVT";
+            this.LocationID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LocationID.FormattingEnabled = true;
             this.LocationID.Location = new System.Drawing.Point(455, 69);
             this.LocationID.Name = "LocationID";
@@ -187,8 +189,9 @@
             // BCategoryID
             // 
             this.BCategoryID.DisplayMember = "TenTL";
+            this.BCategoryID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BCategoryID.FormattingEnabled = true;
-            this.BCategoryID.Location = new System.Drawing.Point(455, 40);
+            this.BCategoryID.Location = new System.Drawing.Point(107, 69);
             this.BCategoryID.Name = "BCategoryID";
             this.BCategoryID.Size = new System.Drawing.Size(249, 21);
             this.BCategoryID.TabIndex = 6;
@@ -197,8 +200,9 @@
             // PubID
             // 
             this.PubID.DisplayMember = "TenNXB";
+            this.PubID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PubID.FormattingEnabled = true;
-            this.PubID.Location = new System.Drawing.Point(107, 98);
+            this.PubID.Location = new System.Drawing.Point(455, 40);
             this.PubID.Name = "PubID";
             this.PubID.Size = new System.Drawing.Size(249, 21);
             this.PubID.TabIndex = 3;
@@ -207,8 +211,9 @@
             // AuthorID
             // 
             this.AuthorID.DisplayMember = "TenTG";
+            this.AuthorID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AuthorID.FormattingEnabled = true;
-            this.AuthorID.Location = new System.Drawing.Point(455, 12);
+            this.AuthorID.Location = new System.Drawing.Point(107, 98);
             this.AuthorID.Name = "AuthorID";
             this.AuthorID.Size = new System.Drawing.Size(249, 21);
             this.AuthorID.TabIndex = 5;
@@ -216,7 +221,7 @@
             // 
             // BookTitle
             // 
-            this.BookTitle.Location = new System.Drawing.Point(107, 40);
+            this.BookTitle.Location = new System.Drawing.Point(455, 12);
             this.BookTitle.Name = "BookTitle";
             this.BookTitle.Size = new System.Drawing.Size(249, 20);
             this.BookTitle.StyleController = this.layoutControl1;
@@ -226,9 +231,14 @@
             // 
             this.BookID.Location = new System.Drawing.Point(107, 12);
             this.BookID.Name = "BookID";
+            this.BookID.Properties.BeepOnError = false;
+            this.BookID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.BookID.Properties.MaskSettings.Set("mask", "BOOK0000");
+            this.BookID.Properties.UseMaskAsDisplayFormat = true;
             this.BookID.Size = new System.Drawing.Size(249, 20);
             this.BookID.StyleController = this.layoutControl1;
             this.BookID.TabIndex = 0;
+            this.BookID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AuthorID_KeyPress);
             // 
             // Root
             // 
@@ -238,14 +248,14 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
             this.layoutControlItem10,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem3});
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem7,
+            this.layoutControlItem5,
+            this.layoutControlItem6});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
@@ -283,16 +293,6 @@
             this.layoutControlItem1.Text = "Book ID";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(83, 13);
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.BookTitle;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(348, 29);
-            this.layoutControlItem2.Text = "Book Title";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(83, 13);
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.State;
@@ -302,37 +302,6 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem10.Text = "State";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(83, 13);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.PubID;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 86);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 3;
-            this.layoutControlItem5.Size = new System.Drawing.Size(348, 29);
-            this.layoutControlItem5.Text = "Publisher ID";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(83, 13);
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.AuthorID;
-            this.layoutControlItem6.Location = new System.Drawing.Point(348, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem6.Size = new System.Drawing.Size(348, 28);
-            this.layoutControlItem6.Text = "Author ID";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(83, 13);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.BCategoryID;
-            this.layoutControlItem7.Location = new System.Drawing.Point(348, 28);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem7.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem7.Size = new System.Drawing.Size(348, 29);
-            this.layoutControlItem7.Text = "Category ID";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(83, 13);
             // 
             // layoutControlItem8
             // 
@@ -356,15 +325,56 @@
             this.layoutControlItem9.Text = "Language ID";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(83, 13);
             // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.BookTitle;
+            this.layoutControlItem2.Location = new System.Drawing.Point(348, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem2.Size = new System.Drawing.Size(348, 28);
+            this.layoutControlItem2.Text = "Book Title";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(83, 13);
+            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.DatePublic;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 57);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
+            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem3.Size = new System.Drawing.Size(348, 29);
             this.layoutControlItem3.Text = "Publicing Date";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(83, 13);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.BCategoryID;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 57);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.OptionsTableLayoutItem.RowIndex = 2;
+            this.layoutControlItem7.Size = new System.Drawing.Size(348, 29);
+            this.layoutControlItem7.Text = "Category ID";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(83, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.PubID;
+            this.layoutControlItem5.Location = new System.Drawing.Point(348, 28);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 1;
+            this.layoutControlItem5.Size = new System.Drawing.Size(348, 29);
+            this.layoutControlItem5.Text = "Publisher ID";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(83, 13);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.AuthorID;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 86);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 3;
+            this.layoutControlItem6.Size = new System.Drawing.Size(348, 29);
+            this.layoutControlItem6.Text = "Author ID";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(83, 13);
             // 
             // dataGridView1
             // 
@@ -593,14 +603,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.BookID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.windowsUIButtonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
@@ -622,7 +632,6 @@
         private DevExpress.XtraEditors.TextEdit BookID;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.ComboBox State;
         private System.Windows.Forms.ComboBox LanguageID;
         private System.Windows.Forms.ComboBox LocationID;
@@ -633,13 +642,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private System.Windows.Forms.DateTimePicker DatePublic;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -656,5 +661,10 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

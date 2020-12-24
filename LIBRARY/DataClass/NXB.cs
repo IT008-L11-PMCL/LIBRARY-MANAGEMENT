@@ -13,9 +13,15 @@ namespace LIBRARY.DataClass
         public string diaChi { get; set; }
         public string email { get; set; }
         public string thongTin { get; set; }
+        public NXB()
+        {
+            diaChi = "null";
+            email = "null";
+            thongTin = "null";
+        }
         public bool isNull()
         {
-            return (string.IsNullOrEmpty(maNXB) || string.IsNullOrEmpty(tenNXB) || string.IsNullOrEmpty(diaChi) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(thongTin));
+            return (string.IsNullOrEmpty(maNXB) || string.IsNullOrEmpty(tenNXB));
         }
     }
 }

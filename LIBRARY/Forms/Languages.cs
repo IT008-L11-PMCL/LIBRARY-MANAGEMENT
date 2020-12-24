@@ -35,6 +35,7 @@ namespace LIBRARY.Forms
             resetText();
             LanguageID.Focus();
             dataGridView1.DataSource = nn.getList();
+            LanguageID.Text = dataGridView1.Rows.Count.ToString("000");
             dataGridView1.AutoResizeColumns();
         }
 
@@ -146,10 +147,26 @@ namespace LIBRARY.Forms
 
         private void CardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Cards window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dialog == DialogResult.Cancel)
-                e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Cards window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.Cancel)
+                    e.Cancel = true;
+            }
         }
 
+        private void LanguageID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (LanguageID.Text.Length > 9)
+                e.Handled = true;
+            if (e.KeyChar.ToString() == "\b")
+                e.Handled = false;
+            if (e.Handled)
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("ID length more than 10 character", LanguageID, LanguageID.Location, 5000);
+            }
+
+        }
     }
 }

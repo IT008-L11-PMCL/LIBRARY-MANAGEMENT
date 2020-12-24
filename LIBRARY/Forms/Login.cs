@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010;
 using LIBRARY.BUSS;
+using LIBRARY.DataClass;
 
 namespace LIBRARY.Forms
-{
-    
+{   
     public partial class Login : DevExpress.XtraEditors.XtraForm
     {
         nhanVien_BUS nv = new nhanVien_BUS();
@@ -36,22 +36,14 @@ namespace LIBRARY.Forms
         {
             userName.Focus();
         }
-
-        private void Login_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar.ToString() == "\n")
-                Ok(sender, (EventArgs)e);
-            else return;
-
-        }
-
+      
         private void windowsUIButtonPanel1_ButtonClick(object sender, ButtonEventArgs e)
         {
             string tag = ((WindowsUIButton)e.Button).Tag.ToString();
             switch(tag)
             {
                 case "ok":
-                    Ok(sender, e);
+                    Ok();
                     break;
                 case "register":                   
                     new Registration().ShowDialog();                       
@@ -59,14 +51,17 @@ namespace LIBRARY.Forms
             }    
         }
 
-        private void Ok(object sender, EventArgs e)
+        private void Ok()
         {
             string uName = userName.Text;
             string pWord = passWord.Text;
             if (nv.check(uName, pWord))
-            {
+            {                
                 this.Hide();
-                new MainForm().ShowDialog();
+                MainForm mainForm = new MainForm();
+                mainForm.user = uName;
+                mainForm.ShowDialog();
+    
             }
             else
             {
@@ -74,6 +69,12 @@ namespace LIBRARY.Forms
                 passWord.ResetText();
             }
                 
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Ok();    
         }
     }
 }

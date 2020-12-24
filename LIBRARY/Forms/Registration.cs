@@ -31,20 +31,27 @@ namespace LIBRARY.Forms
                     this.Close();
                     break;
                 case "ok":
-                    Ok(sender, e);
+                    Ok();
                     break;
                 default:
                     break;
             }    
         }
 
-        private void Ok(object sender, EventArgs e)
+        private void Ok()
         {
             try
             {
                 nhanVien n = new nhanVien();
                 if (nv.timkiem("UserName", UserName.Text).Rows.Count > 0)
+                {
+                    UserName.SelectAll();
+                    PassWord.Text = "";
+                    Retype.Text = "";
+                    UserName.Focus();
                     MessageBox.Show("User already exists");
+
+                }
                 else
                 {
                     if (PassWord.Text == Retype.Text)
@@ -54,7 +61,7 @@ namespace LIBRARY.Forms
                         n.ngaySinh = BirthDay.Value.ToShortDateString();
                         n.sdt = PhoneNumber.Text;
                         n.passWord = PassWord.Text;
-                        if(n.isNull())
+                        if (n.isNull())
                         {
                             toolTip1.ToolTipTitle = "Warning";
                             toolTip1.Show("Enter full infomation", Retype, Retype.Location, 5000);
@@ -69,10 +76,13 @@ namespace LIBRARY.Forms
                     }
                     else
                     {
+                        
                         toolTip1.ToolTipTitle = "Warning";
-                        toolTip1.Show("Rytype incorrectly", Retype, Retype.Location, 5000);
+                        toolTip1.Show("Retype password again!", Retype,new Point(400,250), 5000);
+                        Retype.SelectAll();
+                        Retype.Focus();
                     }
-                    
+
                 }
             }
             catch
@@ -81,10 +91,25 @@ namespace LIBRARY.Forms
             }
         }
 
-        private void Registration_KeyPress(object sender, KeyPressEventArgs e)
+        private void Registration_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar.ToString() == "\n")
-                Ok(sender, e);
+            if (e.KeyCode == Keys.Enter)
+                Ok();
+        }
+
+        private void PhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsDigit(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar.ToString() == "\b")
+                e.Handled = false;
+            if (e.Handled)
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("This charater is not a number or Phone number length more than 10 character", PhoneNumber, PhoneNumber.Location, 5000);
+            }
         }
     }
 }

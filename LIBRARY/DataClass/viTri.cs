@@ -17,5 +17,10 @@ namespace LIBRARY.DataClass
         {
             khu = ke = ngan = "null";
         }    
+
+        public bool isNull()
+        {
+            return (string.IsNullOrWhiteSpace(maVT) || string.IsNullOrWhiteSpace(khu) || string.IsNullOrWhiteSpace(ke) || string.IsNullOrWhiteSpace(ngan));
+        }
     }
 }

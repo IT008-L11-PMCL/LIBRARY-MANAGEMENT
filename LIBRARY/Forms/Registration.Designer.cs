@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition13 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition14 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition15 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition16 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition17 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition18 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.BirthDay = new System.Windows.Forms.DateTimePicker();
@@ -81,9 +81,9 @@
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(168, 33);
+            this.labelControl1.Size = new System.Drawing.Size(289, 33);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Registration";
+            this.labelControl1.Text = "Account Registration";
             // 
             // layoutControl1
             // 
@@ -104,63 +104,69 @@
             // BirthDay
             // 
             this.BirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthDay.Location = new System.Drawing.Point(112, 38);
+            this.BirthDay.Location = new System.Drawing.Point(114, 38);
             this.BirthDay.Name = "BirthDay";
-            this.BirthDay.Size = new System.Drawing.Size(338, 20);
+            this.BirthDay.Size = new System.Drawing.Size(336, 20);
             this.BirthDay.TabIndex = 10;
             // 
             // Retype
             // 
-            this.Retype.Location = new System.Drawing.Point(112, 142);
+            this.Retype.Location = new System.Drawing.Point(114, 142);
             this.Retype.Name = "Retype";
             this.Retype.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.Retype.Properties.Appearance.Options.UseBackColor = true;
             this.Retype.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.Retype.Size = new System.Drawing.Size(338, 20);
+            this.Retype.Properties.UseSystemPasswordChar = true;
+            this.Retype.Size = new System.Drawing.Size(336, 20);
             this.Retype.StyleController = this.layoutControl1;
             this.Retype.TabIndex = 9;
             // 
             // PassWord
             // 
-            this.PassWord.Location = new System.Drawing.Point(112, 116);
+            this.PassWord.Location = new System.Drawing.Point(114, 116);
             this.PassWord.Name = "PassWord";
             this.PassWord.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.PassWord.Properties.Appearance.Options.UseBackColor = true;
             this.PassWord.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.PassWord.Size = new System.Drawing.Size(338, 20);
+            this.PassWord.Properties.UseSystemPasswordChar = true;
+            this.PassWord.Size = new System.Drawing.Size(336, 20);
             this.PassWord.StyleController = this.layoutControl1;
             this.PassWord.TabIndex = 8;
             // 
             // UserName
             // 
-            this.UserName.Location = new System.Drawing.Point(112, 90);
+            this.UserName.Location = new System.Drawing.Point(114, 90);
             this.UserName.Name = "UserName";
             this.UserName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.UserName.Properties.Appearance.Options.UseBackColor = true;
             this.UserName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.UserName.Size = new System.Drawing.Size(338, 20);
+            this.UserName.Size = new System.Drawing.Size(336, 20);
             this.UserName.StyleController = this.layoutControl1;
             this.UserName.TabIndex = 7;
             // 
             // PhoneNumber
             // 
-            this.PhoneNumber.Location = new System.Drawing.Point(112, 64);
+            this.PhoneNumber.Location = new System.Drawing.Point(114, 64);
             this.PhoneNumber.Name = "PhoneNumber";
             this.PhoneNumber.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.PhoneNumber.Properties.Appearance.Options.UseBackColor = true;
+            this.PhoneNumber.Properties.BeepOnError = false;
             this.PhoneNumber.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.PhoneNumber.Size = new System.Drawing.Size(338, 20);
+            this.PhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.PhoneNumber.Properties.MaskSettings.Set("mask", "000-000-0000");
+            this.PhoneNumber.Size = new System.Drawing.Size(336, 20);
             this.PhoneNumber.StyleController = this.layoutControl1;
             this.PhoneNumber.TabIndex = 6;
+            this.PhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber_KeyPress);
             // 
             // fullName
             // 
-            this.fullName.Location = new System.Drawing.Point(112, 12);
+            this.fullName.Location = new System.Drawing.Point(114, 12);
             this.fullName.Name = "fullName";
             this.fullName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.fullName.Properties.Appearance.Options.UseBackColor = true;
             this.fullName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.fullName.Size = new System.Drawing.Size(338, 20);
+            this.fullName.Size = new System.Drawing.Size(336, 20);
             this.fullName.StyleController = this.layoutControl1;
             this.fullName.TabIndex = 4;
             // 
@@ -178,29 +184,29 @@
             this.layoutControlItem2});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition3.Width = 100D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1.Width = 100D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition3});
-            rowDefinition13.Height = 100D;
-            rowDefinition13.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition14.Height = 100D;
-            rowDefinition14.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition15.Height = 100D;
-            rowDefinition15.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition16.Height = 100D;
-            rowDefinition16.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition17.Height = 100D;
-            rowDefinition17.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition18.Height = 100D;
-            rowDefinition18.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1});
+            rowDefinition1.Height = 100D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition2.Height = 100D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition3.Height = 100D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition4.Height = 100D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition5.Height = 100D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition6.Height = 100D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition13,
-            rowDefinition14,
-            rowDefinition15,
-            rowDefinition16,
-            rowDefinition17,
-            rowDefinition18});
+            rowDefinition1,
+            rowDefinition2,
+            rowDefinition3,
+            rowDefinition4,
+            rowDefinition5,
+            rowDefinition6});
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 9, 9);
             this.Root.Size = new System.Drawing.Size(453, 179);
             this.Root.TextVisible = false;
@@ -212,7 +218,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(451, 26);
             this.layoutControlItem1.Text = "Full name";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem3
             // 
@@ -222,7 +228,7 @@
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
             this.layoutControlItem3.Size = new System.Drawing.Size(451, 26);
             this.layoutControlItem3.Text = "Phone number";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem4
             // 
@@ -232,7 +238,7 @@
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 3;
             this.layoutControlItem4.Size = new System.Drawing.Size(451, 26);
             this.layoutControlItem4.Text = "User\'s name";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem5
             // 
@@ -242,7 +248,7 @@
             this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 4;
             this.layoutControlItem5.Size = new System.Drawing.Size(451, 26);
             this.layoutControlItem5.Text = "Password";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem6
             // 
@@ -251,8 +257,8 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 5;
             this.layoutControlItem6.Size = new System.Drawing.Size(451, 29);
-            this.layoutControlItem6.Text = "Retype password";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutControlItem6.Text = "Confirm password";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(99, 13);
             // 
             // layoutControlItem2
             // 
@@ -262,15 +268,16 @@
             this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem2.Size = new System.Drawing.Size(451, 26);
             this.layoutControlItem2.Text = "Birthday";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(97, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(99, 13);
             // 
             // windowsUIButtonPanel1
             // 
-            windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
-            windowsUIButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions6.SvgImage")));
+            windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
+            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Button", false, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Back", -1, true, null, true, false, true, "back", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Button", false, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "OK", -1, true, null, true, false, true, "ok", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Button", false, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Back", -1, true, null, true, false, true, "back", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Button", false, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "OK", -1, true, null, true, false, true, "ok", -1, false)});
+            this.windowsUIButtonPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 212);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -292,7 +299,7 @@
             this.MinimizeBox = false;
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Registration_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Registration_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Retype.Properties)).EndInit();

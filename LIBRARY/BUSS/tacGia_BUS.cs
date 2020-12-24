@@ -12,13 +12,9 @@ namespace LIBRARY.BUSS
         {
             return tg.loadTG();
         }
-        public int them(tacGia t)
+        public bool them(tacGia t)
         {
-            if (string.IsNullOrEmpty(t.maTG))
-                return 0;
-            if (!tg.insert(t))
-                return -1;
-            return 1;
+            return tg.insert(t);
         }
         public void xoa(string str)
         {

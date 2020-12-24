@@ -89,6 +89,7 @@
             this.passWord.Size = new System.Drawing.Size(289, 20);
             this.passWord.StyleController = this.layoutControl1;
             this.passWord.TabIndex = 5;
+            this.passWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             // 
             // userName
             // 
@@ -188,7 +189,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.SignIn_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.passWord.Properties)).EndInit();

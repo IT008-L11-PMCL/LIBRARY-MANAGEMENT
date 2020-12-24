@@ -42,5 +42,10 @@ namespace LIBRARY.BUSS
         {
             return nv.insertUser(n);
         }
+
+        public DataTable ChiTiet(string username)
+        {
+            return nv.detail(username);
+        }
     }
 }

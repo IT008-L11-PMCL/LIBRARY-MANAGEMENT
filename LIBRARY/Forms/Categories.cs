@@ -39,6 +39,7 @@ namespace LIBRARY.Forms
                 resetText();
                 CategoryID.Focus();
                 dataGridView1.DataSource = tl.getList();
+            CategoryID.Text = dataGridView1.Rows.Count.ToString("00");
                 dataGridView1.AutoResizeColumns();
             }
 
@@ -150,10 +151,17 @@ namespace LIBRARY.Forms
 
             private void CardForm_FormClosing(object sender, FormClosingEventArgs e)
             {
-                DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Cards window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                if (dialog == DialogResult.Cancel)
-                    e.Cancel = true;
+                if (e.CloseReason == CloseReason.UserClosing)
+                {
+                    DialogResult dialog = MessageBox.Show("Data may be lost. Are you sure you want to exit Cards window??", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dialog == DialogResult.Cancel)
+                        e.Cancel = true;
+                }
             }
-     
+
+        private void CategoryID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
     }
 }

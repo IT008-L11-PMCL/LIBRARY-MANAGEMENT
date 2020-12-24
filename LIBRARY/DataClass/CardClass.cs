@@ -21,7 +21,7 @@ namespace LIBRARY.DataClass
         }
         public bool isNull()
         {
-            return (string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(ngayBD) || string.IsNullOrEmpty(ngayHH) || string.IsNullOrEmpty(ghiChu));
+            return (string.IsNullOrEmpty(maThe));
         }
     }
 }

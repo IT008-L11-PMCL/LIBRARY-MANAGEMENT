@@ -18,8 +18,10 @@ namespace LIBRARY.DAO
         }
         public void update(nhanVien n)
         {
-            string sqlCommand = string.Format("update NHANVIEN set HoTen = N'{0}', NgaySinh = '{1}', SoDT = '{2}  where UserName = '{3}'", n.hoTen, n.ngaySinh, n.sdt, n.maNV);
+            string sqlCommand = string.Format("update NHANVIEN set HoTen = N'{0}', NgaySinh = '{1}', SoDT = '{2}'  where UserName = '{3}'", n.hoTen, n.ngaySinh, n.sdt, n.maNV);
+            string sqlCommand1 = string.Format("update USERS set PassWord = '{0}' where UserName = '{1}'", n.passWord, n.maNV);
             Excute(sqlCommand);
+            Excute(sqlCommand1);
         }
         public DataTable search(string s, string tuKhoa)
         {
@@ -39,7 +41,7 @@ namespace LIBRARY.DAO
             string sqlCommand = "select * from NHANVIEN";
             return dataTable(sqlCommand);
         }
-
+        
         public DataTable checkUser(string userName, string passWord)
         {
             string sqlCommand = "select * from USERS where UserName = '" + userName + "' and PassWord = '" + passWord + "'";
@@ -53,6 +55,13 @@ namespace LIBRARY.DAO
             string sqlCommand = string.Format("insert into USERS values ('{0}','{1}')", n.maNV, n.passWord);
             Excute(sqlCommand);
             return true;
-        }       
+        }    
+        
+        public DataTable detail(string username)
+        {
+            string sqlCommand = "Select NHANVIEN.UserName, HoTen, NgaySinh, SoDT, PassWord from NHANVIEN,Users where NHANVIEN.UserName = Users.Username and NHANVIEN.username = '" + username + "'";
+            return dataTable(sqlCommand);
+        }
     }
 }
+ 

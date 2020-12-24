@@ -24,9 +24,9 @@ namespace LIBRARY.DataClass
             ghiChu = "null";
         }
 
-        //public bool isNull()
-        //{
-        //    return (string.IsNullOrEmpty(maMuon) || string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(ngayHan) || string.IsNullOrEmpty(ngayMuon) || string.IsNullOrEmpty(ngayTra) || string.IsNullOrEmpty(ghiChu));
-        //}
+        public bool isNull()
+        {
+            return (string.IsNullOrEmpty(maMuon));
+        }
     }
 }
