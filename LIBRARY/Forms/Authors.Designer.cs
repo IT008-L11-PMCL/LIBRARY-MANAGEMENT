@@ -145,7 +145,8 @@
             this.AuthorID.Name = "AuthorID";
             this.AuthorID.Properties.BeepOnError = false;
             this.AuthorID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.AuthorID.Properties.MaskSettings.Set("mask", "TG000");
+            this.AuthorID.Properties.MaskSettings.Set("mask", "\\AUT000");
+            this.AuthorID.Properties.UseMaskAsDisplayFormat = true;
             this.AuthorID.Size = new System.Drawing.Size(157, 20);
             this.AuthorID.StyleController = this.layoutControl1;
             this.AuthorID.TabIndex = 4;

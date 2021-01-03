@@ -209,7 +209,7 @@ namespace LIBRARY.Forms
         {
             string str = textEdit1.Text;
             if (!string.IsNullOrWhiteSpace(str))
-                dataGridView1.DataSource = sach.timkiem("Ten", str);
+                dataGridView1.DataSource = sach.timkiem(str);
             else
                 dataGridView1.DataSource = sach.getList();
             dataGridView1.AutoResizeColumns();

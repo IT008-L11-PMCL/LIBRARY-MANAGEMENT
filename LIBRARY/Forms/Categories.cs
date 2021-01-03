@@ -39,7 +39,7 @@ namespace LIBRARY.Forms
                 resetText();
                 CategoryID.Focus();
                 dataGridView1.DataSource = tl.getList();
-            CategoryID.Text = dataGridView1.Rows.Count.ToString("00");
+                CategoryID.Text = dataGridView1.Rows.Count.ToString("00");
                 dataGridView1.AutoResizeColumns();
             }
 
@@ -114,10 +114,11 @@ namespace LIBRARY.Forms
                             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                             {
                                 tl.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-                                Categories_Load(sender, e);
-                                resetText();
+                               
                             }
-                    }
+                    Categories_Load(sender, e);
+                    resetText();
+                }
                     else
                     {
                         toolTip1.ToolTipTitle = "Warning";

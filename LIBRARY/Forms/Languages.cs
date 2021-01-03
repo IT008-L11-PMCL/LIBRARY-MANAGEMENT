@@ -110,9 +110,10 @@ namespace LIBRARY.Forms
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
                             nn.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-                            Categories_Load(sender, e);
-                            resetText();
+                            
                         }
+                    Categories_Load(sender, e);
+                    resetText();
                 }
                 else
                 {

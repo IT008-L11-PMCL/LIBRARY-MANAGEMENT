@@ -68,12 +68,14 @@ namespace LIBRARY.Forms
                 v.maVT = LocationID.Text;
                 v.khu = Zone.Text;
                 v.ke = Shelf.Text;
-                v.ngan = Cell.Text;               
-                if(v.isNull())
+                v.ngan = Cell.Text;
+                if (v.isNull())
                 {
                     toolTip1.ToolTipTitle = "Warning";
                     toolTip1.Show("Please enter full information", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
-                }    
+                }
+                else
+                {
                     if (vt.them(v))
                     {
                         Location_Load(sender, e);
@@ -89,6 +91,7 @@ namespace LIBRARY.Forms
                         else return;
 
                     }
+                }
                 
             }
             catch (Exception exc)
@@ -136,7 +139,6 @@ namespace LIBRARY.Forms
                     Zone.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
                     Shelf.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
                     Cell.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
-
                 }
                 else
                     return;

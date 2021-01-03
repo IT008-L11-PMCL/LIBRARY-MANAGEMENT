@@ -59,6 +59,7 @@ namespace LIBRARY.Forms
         private void BookManagement_Click(object sender, EventArgs e)
         {
             BookManagement bookManagement = new BookManagement();
+            bookManagement.user = user;
             AddChild(bookManagement);
         }
 

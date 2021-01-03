@@ -124,44 +124,45 @@
             // 
             // Infomation
             // 
-            this.Infomation.Location = new System.Drawing.Point(83, 67);
+            this.Infomation.Location = new System.Drawing.Point(93, 67);
             this.Infomation.Name = "Infomation";
-            this.Infomation.Size = new System.Drawing.Size(174, 20);
+            this.Infomation.Size = new System.Drawing.Size(164, 20);
             this.Infomation.StyleController = this.layoutControl1;
             this.Infomation.TabIndex = 8;
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(83, 39);
+            this.Email.Location = new System.Drawing.Point(93, 39);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(174, 20);
+            this.Email.Size = new System.Drawing.Size(164, 20);
             this.Email.StyleController = this.layoutControl1;
             this.Email.TabIndex = 7;
             // 
             // Address
             // 
-            this.Address.Location = new System.Drawing.Point(332, 39);
+            this.Address.Location = new System.Drawing.Point(342, 39);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(175, 20);
+            this.Address.Size = new System.Drawing.Size(165, 20);
             this.Address.StyleController = this.layoutControl1;
             this.Address.TabIndex = 6;
             // 
             // PubName
             // 
-            this.PubName.Location = new System.Drawing.Point(332, 12);
+            this.PubName.Location = new System.Drawing.Point(342, 12);
             this.PubName.Name = "PubName";
-            this.PubName.Size = new System.Drawing.Size(175, 20);
+            this.PubName.Size = new System.Drawing.Size(165, 20);
             this.PubName.StyleController = this.layoutControl1;
             this.PubName.TabIndex = 5;
             // 
             // PCID
             // 
-            this.PCID.Location = new System.Drawing.Point(83, 12);
+            this.PCID.Location = new System.Drawing.Point(93, 12);
             this.PCID.Name = "PCID";
             this.PCID.Properties.BeepOnError = false;
             this.PCID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.PCID.Properties.MaskSettings.Set("mask", "PUB0000");
-            this.PCID.Size = new System.Drawing.Size(174, 20);
+            this.PCID.Properties.MaskSettings.Set("mask", "PUB000");
+            this.PCID.Properties.UseMaskAsDisplayFormat = true;
+            this.PCID.Size = new System.Drawing.Size(164, 20);
             this.PCID.StyleController = this.layoutControl1;
             this.PCID.TabIndex = 4;
             this.PCID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PCID_KeyPress);
@@ -206,8 +207,8 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(249, 27);
-            this.layoutControlItem1.Text = "PC ID";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem1.Text = "Publisher ID";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem2
             // 
@@ -217,7 +218,7 @@
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem2.Size = new System.Drawing.Size(250, 27);
             this.layoutControlItem2.Text = "Name";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem4
             // 
@@ -227,7 +228,7 @@
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem4.Size = new System.Drawing.Size(249, 28);
             this.layoutControlItem4.Text = "Email";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem3
             // 
@@ -238,7 +239,7 @@
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem3.Size = new System.Drawing.Size(250, 28);
             this.layoutControlItem3.Text = "Address";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem5
             // 
@@ -248,7 +249,7 @@
             this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 2;
             this.layoutControlItem5.Size = new System.Drawing.Size(249, 28);
             this.layoutControlItem5.Text = "Infomation";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(69, 13);
             // 
             // dataGridView1
             // 
@@ -351,6 +352,7 @@
             this.windowsUIButtonPanel1.TabIndex = 10;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
+            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
             // progressPanel1
             // 

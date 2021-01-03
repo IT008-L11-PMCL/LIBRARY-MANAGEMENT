@@ -4,6 +4,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace LIBRARY.BUSS
 {
@@ -32,7 +33,21 @@ namespace LIBRARY.BUSS
                 throw new Exception("Can't create worksheet");
             }
 
-            Range title = ws.get_Range((Range)(ws.Cells[1, 1]), (Range)(ws.Cells[1, columnCount]));
+            Range range = ws.get_Range((Range)(ws.Cells[1, 1]), (Range)(ws.Cells[1, columnCount]));
+            range.MergeCells = true;
+            range.Value2 = "VIETNAM NATIONAL UNIVERSITY HOCHIMINH CITY";
+            range.Font.Bold = true;
+            range.Font.Color = Color.Blue;
+            range.Font.Size = "12";
+
+            Range range1 = ws.get_Range((Range)(ws.Cells[2, 1]), (Range)(ws.Cells[2, columnCount]));
+            range1.MergeCells = true;
+            range1.Value2 = "INFORMATION TECHNOLOGY OF UNIVERSITY"; 
+            range1.Font.Bold = true;
+            range1.Font.Color = Color.Blue;
+            range1.Font.Size = "12";
+
+            Range title = ws.get_Range((Range)(ws.Cells[4, 1]), (Range)(ws.Cells[4, columnCount]));
             title.MergeCells = true;
             title.Value2 = tit;
             title.Font.Bold = true;
@@ -40,7 +55,7 @@ namespace LIBRARY.BUSS
             title.HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
 
-            Excel.Range headerRange = ws.get_Range((Range)(ws.Cells[2, 1]), (Range)(ws.Cells[2, columnCount]));
+            Excel.Range headerRange = ws.get_Range((Range)(ws.Cells[5, 1]), (Range)(ws.Cells[5, columnCount]));
             headerRange.Value2 = columnHeader;
             headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
             headerRange.Font.Bold = true;
@@ -52,10 +67,21 @@ namespace LIBRARY.BUSS
                 for (int j = 0; j < columnCount; j++)
                     cell[i, j] = table.Rows[i][j].ToString();
 
-            ws.get_Range((Range)(ws.Cells[3, 1]), (Range)(ws.Cells[rowCount + 2, columnCount])).Value2 = cell;
+            ws.get_Range((Range)(ws.Cells[6, 1]), (Range)(ws.Cells[rowCount + 5, columnCount])).Value2 = cell;
+
+            Range r = ws.get_Range((Range)(ws.Cells[rowCount + 7, 1]),(Range)(ws.Cells[rowCount + 7,columnCount]));
+            r.MergeCells = true;
+            r.Value2 = "Ho Chi Minh, " + DateTime.Now.ToLongDateString();
+            r.HorizontalAlignment = XlHAlign.xlHAlignRight;
+
+
+            Range sign = ws.get_Range((Range)(ws.Cells[rowCount + 9, 1]), (Range)(ws.Cells[rowCount + 9, columnCount]));
+            sign.MergeCells = true;
+            sign.Font.Bold = true;
+            sign.HorizontalAlignment = XlHAlign.xlHAlignRight;
+
             ws.Rows.AutoFit();
             ws.Columns.AutoFit();
-
 
             wb.SaveAs(fileName);
             wb.Close(true, misValue, misValue);
@@ -67,7 +93,6 @@ namespace LIBRARY.BUSS
             releaseObject(xlApp);
 
             System.Diagnostics.Process.Start(fileName);
-
         }
 
         private void releaseObject(object obj)

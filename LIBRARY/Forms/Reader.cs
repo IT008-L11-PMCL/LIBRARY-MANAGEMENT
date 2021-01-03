@@ -30,7 +30,7 @@ namespace LIBRARY.Forms
             resetText();
             ReaderID.Focus();
             //
-            CardID.DataSource = the.getList();
+            CardID.DataSource = the.getListAvai();
             //        
             progressPanel1.Visible = false;
             dataGridView1.DataSource = docGia.getList();
@@ -58,10 +58,40 @@ namespace LIBRARY.Forms
                 case "export":
                     Export(sender, e);
                     break;
+                case "print":
+                    Print(sender, e);
+                    break;
                 default:
                     break;
             }
         }
+        private void Print(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "docx files (*.docx)|*.docx|All files (*.*)|*.*";
+                saveFileDialog.Title = "To Word";
+                saveFileDialog.FileName = "card.docx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    fileName = saveFileDialog.FileName;
+
+                    progressPanel1.Size = new System.Drawing.Size(132, 54);
+                    progressPanel1.Visible = true;
+                    backgroundWorker2.RunWorkerAsync();
+                }
+            }
+            else
+            {
+                toolTip1.ToolTipTitle = "Warning";
+                toolTip1.Show("Select the row you want", windowsUIButtonPanel1, windowsUIButtonPanel1.Location, 5000);
+            }                
+        }
+
+
+
 
         private void Export(object sender, EventArgs e)
         {
@@ -74,6 +104,7 @@ namespace LIBRARY.Forms
             {
                 fileName = saveFileDialog.FileName;
 
+                progressPanel1.Size = new System.Drawing.Size(236, 54);
                 progressPanel1.Visible = true;
                 backgroundWorker1.RunWorkerAsync();
             }
@@ -106,7 +137,15 @@ namespace LIBRARY.Forms
                 d.maDG = ReaderID.Text;
                 d.tenDG = ReaderName.Text;
                 d.diaChi = Address.Text;
-                d.maThe = CardID.SelectedValue.ToString();              
+                if (CardID.SelectedValue == null)
+                {
+                    string temp = new CardForm().addCard();
+                    if (temp == null)
+                        throw new Exception("Add card unsuccessful");
+                    else d.maThe = temp;
+                }
+                else { d.maThe = CardID.SelectedValue.ToString(); }
+                
                 d.ghiChu = Note.Text;
                 if (d.isNull())
                 {
@@ -118,7 +157,7 @@ namespace LIBRARY.Forms
                 {
                     if (docGia.them(d))
                     {
-                        the.capNhatTT(d.maDG, "Đang sử dụng");
+                        the.capNhatTT(d.maThe, "Đang sử dụng");
                         ReaderForm_Load(sender, e);
                         resetText();
                        
@@ -152,8 +191,8 @@ namespace LIBRARY.Forms
                     if (dialog == DialogResult.OK)
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
+                            the.capNhatTT(dataGridView1.Rows[row.Index].Cells[3].Value.ToString(),"Mới");
                             docGia.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-
                         }
                     ReaderForm_Load(sender, e);
                     resetText();
@@ -224,6 +263,21 @@ namespace LIBRARY.Forms
                 toolTip1.Show("ID length more than 10 character", ReaderID, ReaderID.Location, 5000);
             }
 
+        }
+
+        private void backgroundWorker2_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            new Word().createDocument(fileName, row.Cells[1].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[0].Value.ToString());
+
+
+        }
+
+        private void backgroundWorker2_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            progressPanel1.Visible = false;
         }
     }
 }

@@ -39,25 +39,27 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.IDManager = new DevExpress.XtraEditors.TextEdit();
             this.checkButton1 = new DevExpress.XtraEditors.CheckButton();
             this.DueDate = new System.Windows.Forms.DateTimePicker();
             this.BorrowingDate = new System.Windows.Forms.DateTimePicker();
-            this.IDManager = new System.Windows.Forms.ComboBox();
             this.IDCard = new System.Windows.Forms.ComboBox();
             this.ID = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -71,16 +73,18 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IDManager.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.windowsUIButtonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -106,10 +110,10 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.IDManager);
             this.layoutControl1.Controls.Add(this.checkButton1);
             this.layoutControl1.Controls.Add(this.DueDate);
             this.layoutControl1.Controls.Add(this.BorrowingDate);
-            this.layoutControl1.Controls.Add(this.IDManager);
             this.layoutControl1.Controls.Add(this.IDCard);
             this.layoutControl1.Controls.Add(this.ID);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -119,6 +123,14 @@
             this.layoutControl1.Size = new System.Drawing.Size(809, 120);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // IDManager
+            // 
+            this.IDManager.Location = new System.Drawing.Point(111, 78);
+            this.IDManager.Name = "IDManager";
+            this.IDManager.Size = new System.Drawing.Size(291, 20);
+            this.IDManager.StyleController = this.layoutControl1;
+            this.IDManager.TabIndex = 9;
             // 
             // checkButton1
             // 
@@ -149,17 +161,6 @@
             this.BorrowingDate.TabIndex = 6;
             this.BorrowingDate.ValueChanged += new System.EventHandler(this.BorrowingDate_ValueChanged);
             // 
-            // IDManager
-            // 
-            this.IDManager.DisplayMember = "UserName";
-            this.IDManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IDManager.FormattingEnabled = true;
-            this.IDManager.Location = new System.Drawing.Point(111, 78);
-            this.IDManager.Name = "IDManager";
-            this.IDManager.Size = new System.Drawing.Size(291, 21);
-            this.IDManager.TabIndex = 5;
-            this.IDManager.ValueMember = "UserName";
-            // 
             // IDCard
             // 
             this.IDCard.DisplayMember = "MaThe";
@@ -178,6 +179,7 @@
             this.ID.Properties.BeepOnError = false;
             this.ID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.ID.Properties.MaskSettings.Set("mask", "\\LEND0000");
+            this.ID.Properties.UseMaskAsDisplayFormat = true;
             this.ID.Size = new System.Drawing.Size(291, 20);
             this.ID.StyleController = this.layoutControl1;
             this.ID.TabIndex = 0;
@@ -193,10 +195,10 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3,
             this.layoutControlItem5,
             this.layoutControlItem4,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem3});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
@@ -238,16 +240,6 @@
             this.layoutControlItem2.Text = "ID Card";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(87, 13);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.IDManager;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 66);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem3.Size = new System.Drawing.Size(394, 34);
-            this.layoutControlItem3.Text = "ID Manager";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 13);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.DueDate;
@@ -280,18 +272,31 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.IDManager;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 66);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 2;
+            this.layoutControlItem3.Size = new System.Drawing.Size(394, 34);
+            this.layoutControlItem3.Text = "Manager ID";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 13);
+            // 
             // windowsUIButtonPanel1
             // 
             windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
             windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
             windowsUIButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions3.SvgImage")));
             windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
+            windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Insert", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "insert", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Refresh", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, false, null, true, false, true, "delete", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Export", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Export lending form", -1, true, null, true, false, true, "export", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
             this.windowsUIButtonPanel1.ContentAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.windowsUIButtonPanel1.Controls.Add(this.progressPanel1);
             this.windowsUIButtonPanel1.Controls.Add(this.layoutControl2);
             this.windowsUIButtonPanel1.Controls.Add(this.checkedListBoxControl1);
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -302,6 +307,20 @@
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.UseButtonBackgroundImages = false;
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
+            // 
+            // progressPanel1
+            // 
+            this.progressPanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.progressPanel1.Appearance.Options.UseBackColor = true;
+            this.progressPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.progressPanel1.Location = new System.Drawing.Point(289, 0);
+            this.progressPanel1.Name = "progressPanel1";
+            this.progressPanel1.ShowCaption = false;
+            this.progressPanel1.ShowDescription = false;
+            this.progressPanel1.Size = new System.Drawing.Size(117, 54);
+            this.progressPanel1.TabIndex = 2;
+            this.progressPanel1.Text = "progressPanel1";
+            this.progressPanel1.Visible = false;
             // 
             // layoutControl2
             // 
@@ -354,6 +373,8 @@
             this.checkedListBoxControl1.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.checkedListBoxControl1.TabIndex = 0;
             this.checkedListBoxControl1.ValueMember = "MaSach";
+            this.checkedListBoxControl1.ItemChecking += new DevExpress.XtraEditors.Controls.ItemCheckingEventHandler(this.checkedListBoxControl1_ItemChecking);
+            this.checkedListBoxControl1.MouseLeave += new System.EventHandler(this.checkedListBoxControl1_MouseLeave);
             // 
             // dataGridView1
             // 
@@ -446,6 +467,11 @@
             this.labelControl2.TabIndex = 7;
             this.labelControl2.Text = "Double click header row to view detail";
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // BookManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,14 +488,15 @@
             this.Load += new System.EventHandler(this.BookManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IDManager.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.windowsUIButtonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
@@ -495,10 +522,8 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DateTimePicker DueDate;
         private System.Windows.Forms.DateTimePicker BorrowingDate;
-        private System.Windows.Forms.ComboBox IDManager;
         private System.Windows.Forms.ComboBox IDCard;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.CheckButton checkButton1;
@@ -514,5 +539,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private DevExpress.XtraEditors.TextEdit IDManager;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
     }
 }

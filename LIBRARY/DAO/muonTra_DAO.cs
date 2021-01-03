@@ -34,9 +34,10 @@ namespace LIBRARY.DAO
             string sqlCommmand = string.Format("select * from MUONTRA where MaMuon like '%{0}%' or MaSach like '%{1}%'", maMuon, maSach);
             return dataTable(sqlCommmand);
         }
+
         public DataTable search(string s)
         {
-            string sqlCommmand = string.Format("select * from MUONTRA where MaMuon = '{0}'", s);
+            string sqlCommmand = string.Format("select * from MUONTRA where MaMuon like '%{0}%'", s);
             return dataTable(sqlCommmand);
 
         }

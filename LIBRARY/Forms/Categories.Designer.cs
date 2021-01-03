@@ -103,6 +103,7 @@
             this.CategoryID.Properties.BeepOnError = false;
             this.CategoryID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.CategoryID.Properties.MaskSettings.Set("mask", "\\C\\ATE00");
+            this.CategoryID.Properties.UseMaskAsDisplayFormat = true;
             this.CategoryID.Size = new System.Drawing.Size(189, 20);
             this.CategoryID.StyleController = this.layoutControl1;
             this.CategoryID.TabIndex = 4;

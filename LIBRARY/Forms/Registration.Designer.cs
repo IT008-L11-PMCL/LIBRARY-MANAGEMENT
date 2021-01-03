@@ -152,8 +152,6 @@
             this.PhoneNumber.Properties.Appearance.Options.UseBackColor = true;
             this.PhoneNumber.Properties.BeepOnError = false;
             this.PhoneNumber.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.PhoneNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.PhoneNumber.Properties.MaskSettings.Set("mask", "000-000-0000");
             this.PhoneNumber.Size = new System.Drawing.Size(336, 20);
             this.PhoneNumber.StyleController = this.layoutControl1;
             this.PhoneNumber.TabIndex = 6;

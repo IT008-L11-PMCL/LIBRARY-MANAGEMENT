@@ -41,17 +41,19 @@ namespace LIBRARY.DAO
 
         public void updateStatus(string maThe, string b)
         {
-
-
             string sqlcommand = "update THETHUVIEN set TrangThai = N'" + b + "' where MaThe = '" + maThe + "'";
             Excute(sqlcommand);
-            
-            
         }
 
         public DataTable getListAvai()
         {
             string sqlCommand = "select * from THETHUVIEN where TrangThai = N'Mới'";
+            return dataTable(sqlCommand);
+        }
+
+        public DataTable getListUsing()
+        {
+            string sqlCommand = "select * from THETHUVIEN where TrangThai = N'Đang sử dụng'";
             return dataTable(sqlCommand);
         }
     } 

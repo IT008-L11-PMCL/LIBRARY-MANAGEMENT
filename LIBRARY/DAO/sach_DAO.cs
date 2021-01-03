@@ -22,9 +22,9 @@ namespace LIBRARY.DAO
             string sqlCommand = string.Format("update SACH set Ten = N'{0}', NamXB = '{1}', MaXB = '{2}',MaTG = '{3}', MaTL ='{4}',MaVT = '{5}',TinhTrang = N'{6}', MaNN = '{7}' where MaSach = '{8}' ", s.tenSach, s.namXB, s.maXB, s.maTG, s.maTL, s.maVT, s.tinhTrang,s.ngonNgu, s.maSach);
             Excute(sqlCommand);
         }
-        public DataTable search(string s,string tuKhoa)
+        public DataTable search(string tuKhoa)
         {
-            string sqlCommmand = string.Format("select * from SACH where {0} like N'%{1}%'", s, tuKhoa);
+            string sqlCommmand = string.Format("select * from SACH where MaSach like '%{0}%' or Ten like N'%{1}%'", tuKhoa, tuKhoa);
             return dataTable(sqlCommmand);
         }
         public bool insert(sach s)

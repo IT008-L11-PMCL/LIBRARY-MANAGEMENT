@@ -149,6 +149,7 @@
             this.CardID.Properties.BeepOnError = false;
             this.CardID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.CardID.Properties.MaskSettings.Set("mask", "\\C\\ARD0000");
+            this.CardID.Properties.UseMaskAsDisplayFormat = true;
             this.CardID.Size = new System.Drawing.Size(287, 20);
             this.CardID.StyleController = this.layoutControl1;
             this.CardID.TabIndex = 0;

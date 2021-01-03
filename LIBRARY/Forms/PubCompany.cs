@@ -36,7 +36,7 @@ namespace LIBRARY.Forms
             resetText();
             PubName.Focus();
             dataGridView1.DataSource = nxb.getList();
-            PCID.Text = dataGridView1.Rows.Count.ToString("0000");
+            PCID.Text = dataGridView1.Rows.Count.ToString("000");
             dataGridView1.AutoResizeColumns();
         }
 
@@ -131,7 +131,6 @@ namespace LIBRARY.Forms
                         foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                         {
                             nxb.xoa(dataGridView1.Rows[row.Index].Cells[0].Value.ToString());
-
                         }
                     PubCompany_Load(sender, e);
                     resetText();

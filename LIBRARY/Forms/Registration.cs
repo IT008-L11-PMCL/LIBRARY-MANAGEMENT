@@ -99,7 +99,7 @@ namespace LIBRARY.Forms
 
         private void PhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((!char.IsDigit(e.KeyChar)))
+            if ((!char.IsDigit(e.KeyChar))||PhoneNumber.Text.Length>=10)
             {
                 e.Handled = true;
             }

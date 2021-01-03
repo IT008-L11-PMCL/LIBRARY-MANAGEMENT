@@ -44,9 +44,9 @@ namespace LIBRARY.BUSS
             sach.update(s);
             return true;
         }
-        public DataTable timkiem(string s, string tk)
+        public DataTable timkiem(string tk)
         {
-            return sach.search(s, tk);
+            return sach.search(tk);
         }       
 
         public void capNhatTrangThai(string str, string b)

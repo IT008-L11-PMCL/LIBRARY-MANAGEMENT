@@ -40,6 +40,7 @@
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem4 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
@@ -254,7 +255,7 @@
             // 
             // 
             // 
-            galleryItemGroup1.Caption = "Profile";
+            galleryItemGroup1.Caption = "Account";
             galleryItem1.Caption = "Profile";
             galleryItem1.Description = "View/Update your profile";
             galleryItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
@@ -277,6 +278,11 @@
             galleryItem3.SuperTip = superToolTip3;
             galleryItem3.Tag = "logout";
             galleryItem3.Value = 2;
+            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem1,
+            galleryItem2,
+            galleryItem3});
+            galleryItemGroup2.Caption = "System";
             galleryItem4.Caption = "Close";
             galleryItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
             toolTipItem4.Text = "Close";
@@ -284,18 +290,18 @@
             galleryItem4.SuperTip = superToolTip4;
             galleryItem4.Tag = "close";
             galleryItem4.Value = 3;
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1,
-            galleryItem2,
-            galleryItem3,
+            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
             galleryItem4});
             this.galleryDropDown1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
-            this.galleryDropDown1.Gallery.ShowGroupCaption = false;
+            galleryItemGroup1,
+            galleryItemGroup2});
             this.galleryDropDown1.Gallery.ShowScrollBar = DevExpress.XtraBars.Ribbon.Gallery.ShowScrollBar.Hide;
+            this.galleryDropDown1.Gallery.UseMaxImageSize = true;
             this.galleryDropDown1.Gallery.ItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.galleryDropDown1_Gallery_ItemClick);
             this.galleryDropDown1.Manager = this.fluentFormDefaultManager1;
             this.galleryDropDown1.Name = "galleryDropDown1";
+            this.galleryDropDown1.OptionsMultiColumn.ImageHorizontalAlignment = DevExpress.Utils.Drawing.ItemHorizontalAlignment.Left;
+            this.galleryDropDown1.OptionsMultiColumn.ShowItemText = DevExpress.Utils.DefaultBoolean.False;
             this.galleryDropDown1.ShowCaption = true;
             // 
             // fluentFormDefaultManager1
@@ -307,7 +313,7 @@
             this.barSubItem1,
             this.barLargeButtonItem2,
             this.barButtonItem1});
-            this.fluentFormDefaultManager1.MaxItemId = 42;
+            this.fluentFormDefaultManager1.MaxItemId = 46;
             this.fluentFormDefaultManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFontEdit1});
             // 
@@ -368,6 +374,7 @@
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("MainForm.IconOptions.SvgImage")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.NavigationControl = this.accordionControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

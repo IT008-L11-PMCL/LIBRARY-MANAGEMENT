@@ -109,6 +109,27 @@ namespace LIBRARY
             progressPanel1.Visible = false;
         }
 
+        public string addCard()
+        {
+            try
+            {
+                theTV t = new theTV();
+                t.maThe = "CARD" + (the.getList().Rows.Count+1).ToString("0000");
+                t.ngayBD = DateTime.Now.ToString(); 
+                t.ngayHH = DateTime.Now.AddYears(1).ToString();
+                if (the.them(t))
+                {
+                    return t.maThe;
+                }
+                else return null;
+            }
+            catch
+            {
+                MessageBox.Show("Auto add card unsuccessful", "Oops");
+                return null;
+            }
+        }
+
         private void Insert(object sender,EventArgs e)
         {
             try

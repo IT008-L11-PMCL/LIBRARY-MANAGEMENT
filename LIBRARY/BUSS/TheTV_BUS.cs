@@ -35,5 +35,15 @@ namespace LIBRARY.BUSS
         {
             the.updateStatus(s, b);
         }
+
+        public DataTable getListAvai()
+        {
+            return the.getListAvai();
+        }
+
+        public DataTable getListUsing()
+        {
+            return the.getListUsing();
+        }
     }
 }

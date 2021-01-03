@@ -103,6 +103,7 @@
             this.LanguageID.Properties.BeepOnError = false;
             this.LanguageID.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.LanguageID.Properties.MaskSettings.Set("mask", "\\L\\ANG000");
+            this.LanguageID.Properties.UseMaskAsDisplayFormat = true;
             this.LanguageID.Size = new System.Drawing.Size(255, 20);
             this.LanguageID.StyleController = this.layoutControl1;
             this.LanguageID.TabIndex = 4;
